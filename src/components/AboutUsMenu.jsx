@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 import aboutUsPages from "../data/aboutUsPages";
 import Typography from "@mui/material/Typography";
+import { Link as RouterLink } from "react-router-dom";
 export default function AboutUsMenu() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -55,7 +56,7 @@ export default function AboutUsMenu() {
         component="a"
         sx={{ my: 2, color: "white", display: "block" }}
       >
-        nosotros
+        about us
       </Button>
       <Popper
         open={open}
@@ -86,8 +87,8 @@ export default function AboutUsMenu() {
                       <Typography
                         variant="button"
                         noWrap
-                        component="a"
-                        href={value}
+                        component={RouterLink}
+                        to={`/${value}`}
                         sx={{
                           mr: 1,
                           flexGrow: 1,

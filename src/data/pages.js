@@ -1,1 +1,1 @@
-module.exports = ["Products", "Pricing", "Blog"];
+module.exports = ["Ebooks", "Physical Ebooks", "Magazines"];

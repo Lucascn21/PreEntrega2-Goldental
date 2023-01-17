@@ -13,6 +13,8 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link as RouterLink } from "react-router-dom";
 import pages from "../data/pages";
 import CartWidget from "./CartWidget";
+import aboutUsPages from "../data/aboutUsPages";
+import AboutUsMenu from "./AboutUsMenu";
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,7 +47,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            AnotherBookstore
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -77,9 +79,30 @@ function NavBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((menuItem) => (
+                <MenuItem key={menuItem} onClick={handleCloseNavMenu}>
+                  <Button
+                    key={menuItem}
+                    component="a"
+                    href={`/${menuItem}`}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 0.25, color: "white", display: "block" }}
+                  >
+                    {menuItem}
+                  </Button>
+                </MenuItem>
+              ))}
+              {aboutUsPages.map((menuItem) => (
+                <MenuItem key={menuItem} onClick={handleCloseNavMenu}>
+                  <Button
+                    key={menuItem}
+                    component={RouterLink}
+                    to={`/${menuItem}`}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 0.25, color: "white", display: "block" }}
+                  >
+                    {menuItem}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -101,7 +124,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            ABookstore
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -115,6 +138,7 @@ function NavBar() {
                 {page}
               </Button>
             ))}
+            <AboutUsMenu></AboutUsMenu>
           </Box>
           <CartWidget cartValue={5} />
         </Toolbar>

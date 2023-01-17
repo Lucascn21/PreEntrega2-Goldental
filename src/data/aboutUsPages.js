@@ -1,1 +1,1 @@
-module.exports = ["mision", "contacto"];
+module.exports = ["Mission", "Contact"];
