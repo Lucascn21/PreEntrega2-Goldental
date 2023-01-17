@@ -83,8 +83,8 @@ function NavBar() {
                 <MenuItem key={menuItem} onClick={handleCloseNavMenu}>
                   <Button
                     key={menuItem}
-                    component="a"
-                    href={`/${menuItem}`}
+                    component={RouterLink}
+                    to={`/${menuItem}`}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 0.25, color: "white", display: "block" }}
                   >
