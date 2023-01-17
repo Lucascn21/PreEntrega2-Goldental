@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBar } from "./components";
+import { ItemListcontainer, NavBar } from "./components";
 import { Shop, Cart } from "./pages";
 
 import * as React from "react";
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+      <>
         <Router>
           <NavBar />
           <Routes>
@@ -40,7 +40,8 @@ export default function App() {
             <Route path="/cart" element={<Cart />}></Route>
           </Routes>
         </Router>
-      </div>
+        <ItemListcontainer greeting="Greeting Prop Value"></ItemListcontainer>
+      </>
     </ThemeProvider>
   );
 }

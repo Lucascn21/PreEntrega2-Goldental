@@ -7,15 +7,16 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Badge from "@mui/material/Badge";
+
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import { Link as RouterLink } from "react-router-dom";
 
 import pages from "../data/pages";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -119,17 +120,7 @@ function NavBar() {
               </Button>
             ))}
           </Box>
-          <Box
-            component={RouterLink}
-            to="/Cart"
-            sx={{ flexGrow: 0, color: "white" }}
-          >
-            <Tooltip title="Open cart">
-              <Badge badgeContent={4} color="error" overlap="circular">
-                <ShoppingCartIcon sx={{ p: 0 }} />
-              </Badge>
-            </Tooltip>
-          </Box>
+          <CartWidget cartValue={5}/>
         </Toolbar>
       </Container>
     </AppBar>
