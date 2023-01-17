@@ -29,7 +29,8 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/" element={<Shop />}></Route>
+            <Route path="/" to="/Everything" element={<Shop pageIndex="welcome"/>}></Route>
+
             {pages.map((page) => (
               <Route
                 key={page}
@@ -37,7 +38,7 @@ export default function App() {
                 element={<Shop pageIndex={page} />}
               ></Route>
             ))}
-            
+
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/mission" element={<Mission />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
