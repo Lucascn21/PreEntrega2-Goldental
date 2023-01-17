@@ -1,9 +1,10 @@
 import React from "react";
+import "./ItemListContainer.scss";
 
 function ItemListcontainer(props) {
   return (
     <main>
-        <h1>{props.greeting}</h1>
+      <h1>{props.greeting}</h1>
       <article>{props.children}</article>
     </main>
   );

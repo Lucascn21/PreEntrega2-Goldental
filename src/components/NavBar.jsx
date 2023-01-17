@@ -7,14 +7,10 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-
 import Button from "@mui/material/Button";
-
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
 import { Link as RouterLink } from "react-router-dom";
-
 import pages from "../data/pages";
 import CartWidget from "./CartWidget";
 
@@ -120,7 +116,7 @@ function NavBar() {
               </Button>
             ))}
           </Box>
-          <CartWidget cartValue={5}/>
+          <CartWidget cartValue={5} />
         </Toolbar>
       </Container>
     </AppBar>
