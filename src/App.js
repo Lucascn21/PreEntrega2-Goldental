@@ -37,6 +37,7 @@ export default function App() {
                 element={<Shop pageIndex={page} />}
               ></Route>
             ))}
+            
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/mission" element={<Mission />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
