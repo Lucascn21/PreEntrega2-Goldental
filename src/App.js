@@ -29,8 +29,7 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/" to="/Everything" element={<Shop pageIndex="welcome"/>}></Route>
-
+            <Route path="/" to="/Home" element={<Shop pageIndex="welcome home "/>}></Route>
             {pages.map((page) => (
               <Route
                 key={page}
