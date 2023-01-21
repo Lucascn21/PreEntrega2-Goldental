@@ -1,5 +1,5 @@
 //export { Main } from "./Main";
-export { default as NavBar } from "./NavBar";
-export { default as CartWidget } from "./CartWidget";
+export { default as NavBar } from "./NavBar/NavBar";
+export { default as CartWidget } from "./NavBar/CartWidget";
 export { default as ItemListcontainer } from "./ItemListcontainer";
-export { default as AboutUsMenu } from "./AboutUsMenu";
+export { default as AboutUsMenu } from "./NavBar/AboutUsMenu";

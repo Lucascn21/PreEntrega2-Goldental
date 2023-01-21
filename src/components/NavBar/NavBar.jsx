@@ -11,9 +11,9 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link as RouterLink } from "react-router-dom";
-import pages from "../data/pages";
+import pages from "../../data/pages";
 import CartWidget from "./CartWidget";
-import aboutUsPages from "../data/aboutUsPages";
+import aboutUsPages from "../../data/aboutUsPages";
 import AboutUsMenu from "./AboutUsMenu";
 
 function NavBar() {
