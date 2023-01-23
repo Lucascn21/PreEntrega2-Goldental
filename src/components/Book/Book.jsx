@@ -1,5 +1,40 @@
-import React from "react";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function Book(props) {
-  return <div> {props.children}</div>;
+  const { id, bookName, price, bookImage } = props.bookData;
+  console.log(props.bookSection); //Condition for some conditional rendering
+  let imgFoundPath =
+    process.env.PUBLIC_URL + `/img/${props.itemType}/${props.imgFilename}`;
+  let imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={props.imgFilename ? imgFoundPath : imgNotFoundPath}
+          alt={props.itemName || "Placeholder"}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
