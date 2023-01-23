@@ -1,14 +1,32 @@
 import React from "react";
 import "./ItemListContainer.scss";
+import { ItemList } from "../components";
+import books from "../data/books";
 
 /*
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-function ItemListcontainer(props) {
-  console.log(props.children);
-  //return props.children;
-  return <div>asd</div>;
+export default function ItemListcontainer(props) {
+  const filteredBooks = filteredBookList(books, props.pageIndex);
+
+  return (
+    <ItemList
+      greeting="asd"
+      pageIndex="asd"
+      filteredBooks={filteredBooks}
+    ></ItemList>
+  );
+
+  // return props.children;
+
+  // return <div>asd</div>;
 }
 
-export default ItemListcontainer;
+//Function that returns a filtered book array based on its corresponding page section
+const filteredBookList = (books, currentPageSection) => {
+  if (currentPageSection === "Physical books")
+    currentPageSection = "Physical_books";
+  if (currentPageSection === "Home") return books;
+  return books.filter((book) => book.bookSection === currentPageSection);
+};
