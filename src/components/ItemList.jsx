@@ -8,7 +8,7 @@ This component will be used as a Container Component in Shop and Cart.
 */
 export default function ItemListcontainer(props) {
   return (
-    <main>
+    <>
       <h1>
         {props.greeting} {props.pageIndex}
       </h1>
@@ -19,8 +19,6 @@ export default function ItemListcontainer(props) {
           </Book>
         </article>
       ))}
-    </main>
+    </>
   );
-
-  //return props.children;
 }

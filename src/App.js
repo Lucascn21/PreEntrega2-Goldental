@@ -29,7 +29,11 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/" to="/Home" element={<Shop pageIndex="Home"/>}></Route>
+            <Route
+              path="/"
+              to="/Home"
+              element={<Shop pageIndex="Home" />}
+            ></Route>
             {pages.map((page) => (
               <Route
                 key={page}

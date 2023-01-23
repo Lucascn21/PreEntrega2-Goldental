@@ -9,18 +9,15 @@ This component will be used as a Container Component in Shop and Cart.
 */
 export default function ItemListcontainer(props) {
   const filteredBooks = filteredBookList(books, props.pageIndex);
-
   return (
-    <ItemList
-      greeting="asd"
-      pageIndex="asd"
-      filteredBooks={filteredBooks}
-    ></ItemList>
+    <>
+      <ItemList
+        greeting="hello"
+        pageIndex={props.pageIndex}
+        filteredBooks={filteredBooks}
+      ></ItemList>
+    </>
   );
-
-  // return props.children;
-
-  // return <div>asd</div>;
 }
 
 //Function that returns a filtered book array based on its corresponding page section
