@@ -48,4 +48,18 @@ module.exports = [
     bookImage: "asd",
     bookSection: "Physical_books",
   },
+  {
+    id: 8,
+    bookName: "Test8",
+    price: 999,
+    bookImage: "asd",
+    bookSection: "Physical_books",
+  },
+  {
+    id: 9,
+    bookName: "Test9",
+    price: 999,
+    bookImage: "asd",
+    bookSection: "Physical_books",
+  },
 ];

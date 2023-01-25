@@ -4,7 +4,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { styled } from '@mui/material/styles';
 
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(1),
+}));
 export default function Book(props) {
   const { id, bookName, price, bookImage } = props.bookData;
   console.log(props.bookSection); //Condition for some conditional rendering
@@ -12,7 +18,7 @@ export default function Book(props) {
     process.env.PUBLIC_URL + `/img/${props.itemType}/${props.imgFilename}`;
   let imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card component="article">
       <CardActionArea>
         <CardMedia
           component="img"
@@ -32,7 +38,14 @@ export default function Book(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          +
+        </Button>
+        <Div>{5}</Div>
+        <Button size="small" color="primary">
+          -
+        </Button>
+        <Button sx={{flex:"auto"}}size="small" color="primary">
+          Add to cart
         </Button>
       </CardActions>
     </Card>
