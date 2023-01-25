@@ -1,12 +1,9 @@
 main {
   background-color: rgb(7, 46, 7);
-  height: 100vh;
+  min-height: 100vh;
   color: rgb(207, 122, 17);
   margin: 0 1.5rem 0 1.5rem;
   text-align: center;
-  display: flex;
+
 }
 
-h1 {
-  margin-top: 0;
-}

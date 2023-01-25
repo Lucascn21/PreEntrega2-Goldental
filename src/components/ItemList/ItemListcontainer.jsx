@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemListContainer.scss";
-import { ItemList } from "../components";
-import books from "../data/books";
+import { ItemList } from "../../components";
+import books from "../../data/books";
 
 /*
 Container component that Receives a Shop or Cart Component as a children to render
