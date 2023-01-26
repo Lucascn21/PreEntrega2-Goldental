@@ -1,14 +1,14 @@
 import React from "react";
 import "./ItemListContainer.scss";
 import { ItemList } from "../../components";
-import books from "../../data/books";
+import items from "../../data/books";
 
 /*
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
 export default function ItemListcontainer(props) {
-  const filteredBooks = filteredBookList(books, props.pageIndex);
+  const filteredBooks = filteredItemList(items, props.pageIndex);
   return (
     <>
       <ItemList
@@ -20,10 +20,10 @@ export default function ItemListcontainer(props) {
   );
 }
 
-//Function that returns a filtered book array based on its corresponding page section
-const filteredBookList = (books, currentPageSection) => {
+//Function that returns a filtered item array based on its corresponding page section
+const filteredItemList = (items, currentPageSection) => {
   if (currentPageSection === "Physical books")
     currentPageSection = "Physical_books";
-  if (currentPageSection === "Home") return books;
-  return books.filter((book) => book.bookSection === currentPageSection);
+  if (currentPageSection === "Home") return items;
+  return items.filter((item) => item.itemSection === currentPageSection);
 };

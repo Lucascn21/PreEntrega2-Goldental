@@ -1,11 +1,11 @@
 import React from "react";
 import "./ItemListContainer.scss";
-import { Book } from "..";
+import { Item } from "..";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const Item = styled(Paper)(({ theme }) => ({
+const ItemMUI = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -20,13 +20,13 @@ This component will be used as a Container Component in Shop and Cart.
 export default function ItemListcontainer(props) {
   return (
     <>
-      {props.filteredBooks.map((book) => (
-        <Grid component="section" xs={12} md={3}>
-          <Item>
-            <Book key={book.id} bookSection={props.pageIndex} bookData={book}>
+      {props.filteredItems.map((item, index) => (
+        <Grid key={item.id} component="section" xs={12} md={3}>
+          <ItemMUI>
+            <Item itemSection={props.pageIndex} itemData={item}>
               test
-            </Book>
-          </Item>
+            </Item>
+          </ItemMUI>
         </Grid>
       ))}
     </>
