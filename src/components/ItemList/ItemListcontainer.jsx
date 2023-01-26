@@ -14,7 +14,7 @@ export default function ItemListcontainer(props) {
       <ItemList
         greeting="hello"
         pageIndex={props.pageIndex}
-        filteredBooks={filteredBooks}
+        filteredItems={filteredBooks}
       ></ItemList>
     </>
   );
