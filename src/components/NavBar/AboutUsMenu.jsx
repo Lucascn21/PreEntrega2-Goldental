@@ -65,6 +65,7 @@ export default function AboutUsMenu() {
         placement="bottom-start"
         transition
         disablePortal
+        sx={{ zIndex: 9999 }}
       >
         {({ TransitionProps, placement }) => (
           <Grow
