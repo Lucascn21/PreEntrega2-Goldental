@@ -6,7 +6,7 @@ import { ItemList } from "../../components";
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-export default function ItemListcontainer(props) {
+export default function ItemListcontainer({pageIndex}) {
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetch("../json/books.json")
@@ -19,10 +19,10 @@ export default function ItemListcontainer(props) {
       });
   }, []);
 
-  const filteredBooks = filteredItemList(items, props.pageIndex);
+  const filteredBooks = filteredItemList(items, pageIndex);
   return (
     <>
-      <ItemList pageIndex={props.pageIndex} filteredItems={filteredBooks} />
+      <ItemList pageIndex={pageIndex} filteredItems={filteredBooks} />
     </>
   );
 }
