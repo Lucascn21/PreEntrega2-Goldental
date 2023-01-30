@@ -19,10 +19,10 @@ This component will be used as a Container Component in Shop and Cart.
 export default function ItemList(props) {
   return (
     <>
-      {props.filteredItems.map((item, index) => (
+      {props.filteredItems.map((item) => (
         <Grid key={item.id} component="section" xs={12} md={3}>
           <ItemMUI>
-            <Item itemSection={props.pageIndex} itemData={item} />
+            <Item itemData={item} />
           </ItemMUI>
         </Grid>
       ))}

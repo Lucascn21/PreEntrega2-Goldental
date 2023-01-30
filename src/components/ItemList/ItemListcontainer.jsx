@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ItemListContainer.scss";
 import { ItemList } from "../../components";
-import items from "../../data/books";
 
 /*
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
 export default function ItemListcontainer(props) {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch("../json/books.json")
+      .then((response) => response.json())
+      .then((item) => {
+        setTimeout(() => {
+          setItems(item);
+          console.log("Delayed for 2 second.");
+        }, 2000);
+      });
+  }, []);
+
   const filteredBooks = filteredItemList(items, props.pageIndex);
   return (
     <>
-      <ItemList
-        greeting="hello"
-        pageIndex={props.pageIndex}
-        filteredItems={filteredBooks}
-      ></ItemList>
+      <ItemList pageIndex={props.pageIndex} filteredItems={filteredBooks} />
     </>
   );
 }

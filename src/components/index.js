@@ -7,3 +7,4 @@ export { default as Item } from "./Item/Item";
 export { default as ItemList } from "./ItemList/ItemList";
 export { default as ItemCount } from "./ItemCount/ItemCount";
 export { default as ItemDetail } from "./ItemDetail/ItemDetail";
+export { default as ItemDetailContainer } from "./ItemDetail/ItemDetailContainer";
