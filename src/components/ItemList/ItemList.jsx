@@ -1,5 +1,4 @@
 import React from "react";
-import "./ItemListContainer.scss";
 import { Item } from "../";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -23,9 +22,7 @@ export default function ItemList(props) {
       {props.filteredItems.map((item, index) => (
         <Grid key={item.id} component="section" xs={12} md={3}>
           <ItemMUI>
-            <Item itemSection={props.pageIndex} itemData={item}>
-              test
-            </Item>
+            <Item itemSection={props.pageIndex} itemData={item} />
           </ItemMUI>
         </Grid>
       ))}
