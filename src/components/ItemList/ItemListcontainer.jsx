@@ -14,7 +14,7 @@ export default function ItemListcontainer({pageIndex}) {
       .then((item) => {
         setTimeout(() => {
           setItems(item);
-          console.log("Delayed for 2 second.");
+          console.log("Delayed for 2 seconds.");
         }, 2000);
       });
   }, []);

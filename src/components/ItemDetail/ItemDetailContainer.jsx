@@ -10,7 +10,7 @@ export default function ItemDetailContainer({ itemData }) {
         setTimeout(() => {
           const selectedItem = items.find((item) => item.id === itemData.id);
           setproduct(selectedItem);
-          console.log("Delayed for 2 second.");
+          console.log("Delayed for 2 seconds.");
         }, 2000);
       });
   }, [itemData.id]);
