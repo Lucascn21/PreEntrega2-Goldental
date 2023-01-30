@@ -9,10 +9,10 @@ const Div = styled("div")(({ theme }) => ({
 }));
 
 export default function ItemCount({ stock }) {
-  const [stockCount, setStockCount] = useState(stock);
+  const [stockCount, setStockCount] = useState(1);
   const add = () => stockCount < stock && setStockCount(stockCount + 1);
   const remove = () => stockCount > 1 && setStockCount(stockCount - 1);
-
+  const isStocked = (stock) => stock < 1;
   return (
     <CardActions>
       <Button
@@ -21,16 +21,18 @@ export default function ItemCount({ stock }) {
         }}
         size="small"
         color="primary"
+        disabled={isStocked(stock)}
       >
         +
       </Button>
-      <Div>{stockCount}</Div>
+      <Div>{isStocked(stock) ? "no stock" : `${stockCount} / ${stock}`}</Div>
       <Button
         onClick={() => {
           remove();
         }}
         size="small"
         color="primary"
+        disabled={isStocked(stock)}
       >
         -
       </Button>
@@ -41,6 +43,7 @@ export default function ItemCount({ stock }) {
         sx={{ flex: "auto" }}
         size="small"
         color="primary"
+        disabled={isStocked(stock)}
       >
         Add to cart
       </Button>
