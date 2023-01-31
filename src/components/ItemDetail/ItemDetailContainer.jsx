@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 export default function ItemDetailContainer({ itemData }) {
-  const [product, setproduct] = useState([]);
+  const [item, setItem] = useState([]);
   useEffect(() => {
-    fetch("../json/books.json")
-      .then((response) => response.json())
-      .then((items) => {
-        setTimeout(() => {
-          const selectedItem = items.find((item) => item.id === itemData.id);
-          setproduct(selectedItem);
-          console.log("Delayed for 2 seconds.");
-        }, 2000);
-      });
+    getItem(setItem, itemData.id);
   }, [itemData.id]);
-  return <ItemDetail itemData={product} />;
+  return <ItemDetail itemData={item} />;
 }
+
+const getItem = (setItem, itemDataId) => {
+  fetch("../json/books.json")
+    .then((response) => response.json())
+    .then((items) => {
+      setTimeout(() => {
+        const selectedItem = items.find((item) => item.id === itemDataId);
+        setItem(selectedItem);
+        console.log("Delayed for 2 seconds.");
+      }, 2000);
+    });
+};

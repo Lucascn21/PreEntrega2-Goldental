@@ -6,17 +6,10 @@ import { ItemList } from "../../components";
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-export default function ItemListcontainer({pageIndex}) {
+export default function ItemListcontainer({ pageIndex }) {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("../json/books.json")
-      .then((response) => response.json())
-      .then((item) => {
-        setTimeout(() => {
-          setItems(item);
-          console.log("Delayed for 2 seconds.");
-        }, 2000);
-      });
+    getItems(setItems);
   }, []);
 
   const filteredBooks = filteredItemList(items, pageIndex);
@@ -33,4 +26,15 @@ const filteredItemList = (items, currentPageSection) => {
     currentPageSection = "Physical_books";
   if (currentPageSection === "Home") return items;
   return items.filter((item) => item.itemSection === currentPageSection);
+};
+
+const getItems = (setItems) => {
+  fetch("../json/books.json")
+    .then((response) => response.json())
+    .then((item) => {
+      setTimeout(() => {
+        setItems(item);
+        console.log("Delayed for 2 seconds.");
+      }, 2000);
+    });
 };
