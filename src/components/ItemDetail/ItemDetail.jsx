@@ -29,17 +29,17 @@ export default function ItemDetail(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {itemName}
+            {itemName || "Fetching..."}
           </Typography>
           <Typography variant="overline" color="text.secondary">
-            ${new Intl.NumberFormat("de-DE").format(price)}
+            ${new Intl.NumberFormat("de-DE").format(price) || "Fetching..."}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {itemDescription}
+            {itemDescription || "Fetching..."}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={stock} />
+      <ItemCount stock={stock || 0} />
     </>
   );
 }
