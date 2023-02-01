@@ -37,9 +37,9 @@ export default function ItemDetail(props) {
           <Typography variant="body2" color="text.secondary">
             {itemDescription}
           </Typography>
-          <ItemCount stock={stock} />
         </CardContent>
       </CardActionArea>
+      <ItemCount stock={stock} />
     </>
   );
 }
