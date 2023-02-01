@@ -4,10 +4,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-
+import ItemCount from "../ItemCount/ItemCount";
 export default function ItemDetail(props) {
-  const { itemId, itemName, price, itemSection, itemImage, itemDescription } =
-    props.itemData;
+  const {
+    itemId,
+    itemName,
+    price,
+    stock,
+    itemSection,
+    itemImage,
+    itemDescription,
+  } = props.itemData;
   const imgFoundPath =
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
@@ -30,6 +37,7 @@ export default function ItemDetail(props) {
           <Typography variant="body2" color="text.secondary">
             {itemDescription}
           </Typography>
+          <ItemCount stock={stock} />
         </CardContent>
       </CardActionArea>
     </>
