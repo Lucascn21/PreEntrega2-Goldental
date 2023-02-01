@@ -13,6 +13,7 @@ const ItemMUI = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   justifyContent: "center",
 }));
+
 export default function ItemPage(props) {
   const { itemId } = useParams();
   return (
