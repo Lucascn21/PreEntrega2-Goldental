@@ -84,7 +84,7 @@ function NavBar() {
                   <Button
                     key={menuItem}
                     component={RouterLink}
-                    to={`/${menuItem}`}
+                    to={`category/${menuItem}`}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 0.25, color: "white", display: "block" }}
                   >
@@ -97,7 +97,7 @@ function NavBar() {
                   <Button
                     key={menuItem}
                     component={RouterLink}
-                    to={`/${menuItem}`}
+                    to={`category/${menuItem}`}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 0.25, color: "white", display: "block" }}
                   >
@@ -131,7 +131,7 @@ function NavBar() {
               <Button
                 key={page}
                 component={RouterLink}
-                to={page}
+                to={`category/${page}`}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >

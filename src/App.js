@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components";
-import { Shop, Cart, Mission, Contact } from "./pages";
+import { Shop, Cart, Mission, Contact, ItemPage } from "./pages";
 
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,22 +28,19 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route
-              path="/"
-              to="/Home"
-              element={<Shop pageIndex="Home" />}
-            ></Route>
+            <Route path="/" to="/Home" element={<Shop />}></Route>
             {pages.map((page) => (
               <Route
                 key={page}
-                path={page}
-                element={<Shop pageIndex={page} />}
+                path={`category/:categoryId`}
+                element={<Shop />}
               ></Route>
             ))}
 
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/mission" element={<Mission />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/item/:itemId" element={<ItemPage />}></Route>
           </Routes>
         </Router>
       </>

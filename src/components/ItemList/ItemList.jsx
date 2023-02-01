@@ -16,11 +16,11 @@ const ItemMUI = styled(Paper)(({ theme }) => ({
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-export default function ItemList({filteredItems}) {
+export default function ItemList({ filteredItems }) {
   return (
     <>
       {filteredItems.map((item) => (
-        <Grid key={item.id} component="section" xs={12} md={3}>
+        <Grid key={item.itemId} component="section" xs={12} md={3}>
           <ItemMUI>
             <Item itemData={item} />
           </ItemMUI>
