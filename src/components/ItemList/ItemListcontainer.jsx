@@ -15,7 +15,7 @@ export default function ItemListcontainer({ pageIndex }) {
   const filteredBooks = filteredItemList(items, pageIndex);
   return (
     <>
-      <ItemList pageIndex={pageIndex} filteredItems={filteredBooks} />
+      <ItemList filteredItems={filteredBooks} />
     </>
   );
 }
@@ -31,9 +31,9 @@ const filteredItemList = (items, currentPageSection) => {
 const getItems = (setItems) => {
   fetch("../json/books.json")
     .then((response) => response.json())
-    .then((item) => {
+    .then((items) => {
       setTimeout(() => {
-        setItems(item);
+        setItems(items);
         console.log("Delayed for 2 seconds.");
       }, 2000);
     });
