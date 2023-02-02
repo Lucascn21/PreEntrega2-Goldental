@@ -6,14 +6,14 @@ import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 export default function ItemDetail(props) {
-  const { itemName, price, stock, itemSection, itemImage, itemDescription } =
+  const { itemId, itemName, price, stock, itemSection, itemImage, itemDescription } =
     props.itemData;
   const imgFoundPath =
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
   return (
     <>
-      <CardActionArea component={RouterLink} to={`/item/${itemName}`}>
+      <CardActionArea component={RouterLink} to={`/item/${itemId}`}>
         <CardMedia
           component="img"
           height="140"

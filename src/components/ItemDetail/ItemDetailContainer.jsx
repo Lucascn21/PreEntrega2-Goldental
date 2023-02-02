@@ -9,12 +9,12 @@ export default function ItemDetailContainer({ itemIdValue }) {
   return <ItemDetail itemData={item}></ItemDetail>;
 }
 
-const getItem = async (setItem, itemName) => {
+const getItem = async (setItem, itemId) => {
   fetch("../json/books.json")
     .then((response) => response.json())
     .then((items) => {
       setTimeout(() => {
-        const selectedItem = items.find((item) => item.itemName === itemName);
+        const selectedItem = items.find((item) => item.itemId === Number.parseInt(itemId));
         setItem(selectedItem);
         console.log("Delayed individual item detail fetching for 2 seconds.");
       }, 2000);
