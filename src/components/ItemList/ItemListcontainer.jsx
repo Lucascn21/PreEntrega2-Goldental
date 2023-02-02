@@ -15,11 +15,7 @@ export default function ItemListcontainer() {
   }, [categoryId]);
 
   const filteredBooks = filteredItemList(items, categoryId);
-  return (
-    <>
-      <ItemList filteredItems={filteredBooks} />
-    </>
-  );
+  return <ItemList filteredItems={filteredBooks} />;
 }
 
 //Function that returns a filtered item array based on its corresponding page section
