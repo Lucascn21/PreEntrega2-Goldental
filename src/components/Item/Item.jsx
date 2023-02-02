@@ -5,7 +5,7 @@ import ItemDetailContainer from "../ItemDetail/ItemDetailContainer";
 export default function Item({ itemData }) {
   return (
     <Card component="article">
-      <ItemDetailContainer itemIdValue={itemData.itemId} />
+      <ItemDetailContainer itemIdValue={itemData.itemName} />
     </Card>
   );
 }
