@@ -88,7 +88,7 @@ function NavBar() {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 0.25, color: "white", display: "block" }}
                   >
-                    {menuItem}
+                    {menuItem.replace(/_/g, " ")}
                   </Button>
                 </MenuItem>
               ))}
@@ -135,7 +135,7 @@ function NavBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.replace(/_/g, " ")}
               </Button>
             ))}
             <AboutUsMenu></AboutUsMenu>
