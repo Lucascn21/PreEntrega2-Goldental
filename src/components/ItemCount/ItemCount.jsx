@@ -14,7 +14,7 @@ export default function ItemCount({ stock }) {
   const remove = () => stockCount > 1 && setStockCount(stockCount - 1);
   const isStocked = (stock) => stock < 1;
   return (
-    <CardActions>
+    <CardActions sx={{justifyContent:'center'}}>
       <Button
         onClick={() => {
           add();
@@ -22,6 +22,7 @@ export default function ItemCount({ stock }) {
         size="small"
         color="primary"
         disabled={isStocked(stock)}
+
       >
         +
       </Button>
@@ -35,17 +36,6 @@ export default function ItemCount({ stock }) {
         disabled={isStocked(stock)}
       >
         -
-      </Button>
-      <Button
-        onClick={() => {
-          console.log("onClick");
-        }}
-        sx={{ flex: "auto" }}
-        size="small"
-        color="primary"
-        disabled={isStocked(stock)}
-      >
-        Add to cart
       </Button>
     </CardActions>
   );

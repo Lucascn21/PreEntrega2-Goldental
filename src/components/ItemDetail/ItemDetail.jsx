@@ -5,7 +5,9 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import { Button } from "@mui/material";
 export default function ItemDetail(props) {
+  const isStocked = (stock) => stock < 1;
   const { itemId, itemName, price, stock, itemSection, itemImage, itemDescription } =
     props.itemData;
   const imgFoundPath =
@@ -33,6 +35,17 @@ export default function ItemDetail(props) {
         </CardContent>
       </CardActionArea>
       <ItemCount stock={stock || 0} />
+      <Button
+        onClick={() => {
+          console.log("onClick");
+        }}
+        sx={{ flex: "auto", width:"100%" }}
+        size="large"
+        color="primary"
+        disabled={isStocked(stock)}
+      >
+        Add to cart
+      </Button>
     </>
   );
 }
