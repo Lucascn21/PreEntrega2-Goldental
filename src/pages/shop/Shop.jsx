@@ -7,4 +7,4 @@ export const Shop = () => {
       <ItemListcontainer />
     </Grid>
   );
-}
+};
