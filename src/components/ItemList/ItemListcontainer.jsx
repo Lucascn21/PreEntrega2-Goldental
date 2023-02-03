@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-export default function ItemListcontainer() {
+export const ItemListcontainer = () => {
   const { categoryId } = useParams();
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -16,13 +16,14 @@ export default function ItemListcontainer() {
 
   const filteredBooks = filteredItemList(items, categoryId);
   return <ItemList filteredItems={filteredBooks} />;
-}
+};
 
 //Function that returns a filtered item array based on its corresponding page section
 const filteredItemList = (items, currentRoute) => {
-  if (currentRoute === "Physical books") currentRoute = "Physical_books";
-  if (currentRoute === "Everything" || currentRoute === undefined) return items;
-  return items.filter((item) => item.itemSection === currentRoute);
+  const route = currentRoute;
+  if (route === "Physical books") route.split(" ", 3).join("_");
+  const filtereditems = items.filter((item) => item.itemSection === route);
+  return filtereditems.length ? filtereditems : items;
 };
 
 const getItems = (setItems) => {
