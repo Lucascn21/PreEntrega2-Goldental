@@ -1,3 +1,4 @@
+import "./App.scss"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Shop, Cart, Mission, Contact, ItemPage } from "./pages";
