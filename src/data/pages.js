@@ -1,1 +1,1 @@
-export const pages = ["Everything", "Ebooks", "Physical_books", "Magazines"];
+export const pages = ["everything", "ebooks", "physical-books", "magazines"];

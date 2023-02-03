@@ -88,7 +88,7 @@ export const NavBar = () => {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 0.25, color: "white", display: "block" }}
                   >
-                    {menuItem.replace(/_/g, " ")}
+                    {menuItem.replace(/-/g, " ")}
                   </Button>
                 </MenuItem>
               ))}
@@ -135,7 +135,7 @@ export const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page.replace(/_/g, " ")}
+                {page.replace(/-/g, " ")}
               </Button>
             ))}
             <AboutUsMenu></AboutUsMenu>
