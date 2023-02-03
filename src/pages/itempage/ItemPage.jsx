@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemDetailContainer } from "../../components";
+import { ItemDetailContainer } from "../../components/ItemDetail/ItemDetailContainer";
 import { useParams } from "react-router-dom";
 import Container from "@mui/material/Container";
 import { styled } from "@mui/material/styles";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Item } from "../";
+import { Item } from "../Item/Item";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Unstable_Grid2";
