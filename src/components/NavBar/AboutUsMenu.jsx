@@ -6,10 +6,10 @@ import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
-import aboutUsPages from "../../data/aboutUsPages";
+import { aboutUsPages } from "../../data/aboutUsPages";
 import Typography from "@mui/material/Typography";
 import { Link as RouterLink } from "react-router-dom";
-export default function AboutUsMenu() {
+export const AboutUsMenu = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -111,4 +111,4 @@ export default function AboutUsMenu() {
       </Popper>
     </>
   );
-}
+};

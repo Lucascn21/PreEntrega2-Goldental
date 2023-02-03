@@ -1,1 +1,1 @@
-module.exports = ["Everything", "Ebooks", "Physical_books", "Magazines"];
+export const pages = ["Everything", "Ebooks", "Physical_books", "Magazines"];

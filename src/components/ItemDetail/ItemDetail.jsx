@@ -4,12 +4,19 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
+import { ItemCount } from "../ItemCount/ItemCount";
 import { Button } from "@mui/material";
-export default function ItemDetail(props) {
+export const ItemDetail = (props) => {
   const isStocked = (stock) => stock < 1;
-  const { itemId, itemName, price, stock, itemSection, itemImage, itemDescription } =
-    props.itemData;
+  const {
+    itemId,
+    itemName,
+    price,
+    stock,
+    itemSection,
+    itemImage,
+    itemDescription,
+  } = props.itemData;
   const imgFoundPath =
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
@@ -39,7 +46,7 @@ export default function ItemDetail(props) {
         onClick={() => {
           console.log("onClick");
         }}
-        sx={{ flex: "auto", width:"100%" }}
+        sx={{ flex: "auto", width: "100%" }}
         size="large"
         color="primary"
         disabled={isStocked(stock)}
@@ -48,4 +55,4 @@ export default function ItemDetail(props) {
       </Button>
     </>
   );
-}
+};

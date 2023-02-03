@@ -1,1 +1,1 @@
-module.exports = ["Mission", "Contact"];
+export const aboutUsPages = ["Mission", "Contact"];

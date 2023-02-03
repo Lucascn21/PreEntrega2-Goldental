@@ -8,13 +8,13 @@ const Div = styled("div")(({ theme }) => ({
   padding: theme.spacing(1),
 }));
 
-export default function ItemCount({ stock }) {
+export const ItemCount = ({ stock }) => {
   const [stockCount, setStockCount] = useState(1);
   const add = () => stockCount < stock && setStockCount(stockCount + 1);
   const remove = () => stockCount > 1 && setStockCount(stockCount - 1);
   const isStocked = (stock) => stock < 1;
   return (
-    <CardActions sx={{justifyContent:'center'}}>
+    <CardActions sx={{ justifyContent: "center" }}>
       <Button
         onClick={() => {
           add();
@@ -22,7 +22,6 @@ export default function ItemCount({ stock }) {
         size="small"
         color="primary"
         disabled={isStocked(stock)}
-
       >
         +
       </Button>
@@ -39,4 +38,4 @@ export default function ItemCount({ stock }) {
       </Button>
     </CardActions>
   );
-}
+};

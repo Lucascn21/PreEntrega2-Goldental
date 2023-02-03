@@ -10,14 +10,13 @@ const ItemMUI = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
-
 }));
 
 /*
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
 */
-export default function ItemList({ filteredItems }) {
+export const ItemList = ({ filteredItems }) => {
   return (
     <>
       {filteredItems.map((item) => (
@@ -29,4 +28,4 @@ export default function ItemList({ filteredItems }) {
       ))}
     </>
   );
-}
+};
