@@ -1,4 +1,3 @@
-//export { Main } from "./Main";
 export { NavBar } from "./NavBar/NavBar";
 export { CartWidget } from "./NavBar/CartWidget";
 export { ItemListcontainer } from "./ItemList/ItemListcontainer";

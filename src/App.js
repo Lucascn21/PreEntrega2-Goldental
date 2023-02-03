@@ -28,12 +28,11 @@ export default function App() {
           <NavBar />
           <Routes>
             <Route path="/" to="/Home" element={<Shop />}></Route>
-
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/mission" element={<Mission />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/item/:itemId" element={<ItemPage />}></Route>
-            <Route path={`category/:categoryId`} element={<Shop />}></Route>
+            <Route path="category/:categoryId" element={<Shop />}></Route>
           </Routes>
         </Router>
       </>
