@@ -14,7 +14,7 @@ const ItemMUI = styled(Paper)(({ theme }) => ({
   justifyContent: "center",
 }));
 
-export default function ItemPage(props) {
+export const ItemPage = () => {
   const { itemId } = useParams();
   return (
     <Container maxWidth="sm">
@@ -33,4 +33,4 @@ export default function ItemPage(props) {
       </Grid>
     </Container>
   );
-}
+};

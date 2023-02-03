@@ -1,6 +1,5 @@
-export { default as Cart } from "./cart/Cart";
-export { default as Shop } from "./shop/Shop";
-export { default as Mission } from "./mission/Mission";
-export { default as Contact } from "./contact/Contact";
-export { default as ItemPage } from "./itempage/ItemPage";
-
+export { Cart } from "./cart/Cart";
+export { Shop } from "./shop/Shop";
+export { Mission } from "./mission/Mission";
+export { Contact } from "./contact/Contact";
+export { ItemPage } from "./itempage/ItemPage";

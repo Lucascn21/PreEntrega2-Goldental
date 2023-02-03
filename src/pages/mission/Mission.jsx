@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Mission() {
+export const Mission = () => {
   return <div>Mission - Work In Progress</div>;
-}
+};
