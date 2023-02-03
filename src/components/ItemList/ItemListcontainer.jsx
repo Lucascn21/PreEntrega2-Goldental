@@ -20,9 +20,7 @@ export const ItemListcontainer = () => {
 
 //Function that returns a filtered item array based on its corresponding page section
 const filteredItemList = (items, currentRoute) => {
-  const route = currentRoute;
-  if (route === "Physical books") route.split(" ", 3).join("_");
-  const filtereditems = items.filter((item) => item.itemSection === route);
+  const filtereditems = items.filter((item) => item.itemSection === currentRoute);
   return filtereditems.length ? filtereditems : items;
 };
 
