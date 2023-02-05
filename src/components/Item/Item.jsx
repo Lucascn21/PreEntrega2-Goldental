@@ -5,7 +5,11 @@ import { ItemDetailContainer } from "../ItemDetail/ItemDetailContainer";
 export const Item = ({ itemData }) => {
   return (
     <Card component="article">
-      <ItemDetailContainer itemIdValue={itemData.itemId} />
+      <ItemDetailContainer
+        itemIdValue={`${itemData.itemName.toLowerCase()}-${
+          itemData.itemSection
+        }`}
+      />
     </Card>
   );
 };

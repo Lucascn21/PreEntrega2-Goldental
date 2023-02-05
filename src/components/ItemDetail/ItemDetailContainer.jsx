@@ -15,10 +15,10 @@ const getItem = async (setItem, itemId, navigate) => {
     .then((response) => response.json())
     .then((items) => {
       const selectedItem = items.find(
-        (item) => item.itemId === Number.parseInt(itemId)
+        (item) =>
+          `${item.itemName.toLowerCase()}-${item.itemSection}` === itemId
       );
       if (!selectedItem) navigate("/not-found");
-      console.log("Delayed individual item detail fetching for 2 seconds.");
       setItem(selectedItem);
     });
 };

@@ -8,21 +8,18 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { Button } from "@mui/material";
 export const ItemDetail = (props) => {
   const isStocked = (stock) => stock < 1;
-  const {
-    itemId,
-    itemName,
-    price,
-    stock,
-    itemSection,
-    itemImage,
-    itemDescription,
-  } = props.itemData;
+  const { itemName, price, stock, itemSection, itemImage, itemDescription } =
+    props.itemData;
+
   const imgFoundPath =
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
   return (
     <>
-      <CardActionArea component={RouterLink} to={`/item/${itemId}`}>
+      <CardActionArea
+        component={RouterLink}
+        to={`/item/${itemName}-${itemSection}`.toLowerCase()}
+      >
         <CardMedia
           component="img"
           height="140"

@@ -27,14 +27,19 @@ export const ItemListcontainer = () => {
 
 //Function that returns a filtered item array based on its corresponding page section
 const filteredItemList = (items, currentRoute) => {
+  console.dir(currentRoute);
   const filtereditems = items.filter(
-    (item) => item.itemSection === currentRoute
+    (item) =>
+      `${item.itemName.toLowerCase()}-${item.itemSection}` ===
+      `${item.itemName.toLowerCase()}-${currentRoute}`
   );
+
   return filtereditems.length ? filtereditems : items;
 };
 
 const getItems = (setItems, categoryId, navigate, setLoading) => {
   const existingRoutes = new Set(pages);
+
   fetch("../json/books.json")
     .then((response) => response.json())
     .then((items) => {
