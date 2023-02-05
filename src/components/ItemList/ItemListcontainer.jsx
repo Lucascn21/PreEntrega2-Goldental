@@ -35,12 +35,12 @@ const filteredItemList = (items, currentRoute) => {
 };
 
 const getItems = (setItems, categoryId, navigate, setLoading) => {
+  const existingRoutes = new Set(pages);
   fetch("../json/books.json")
     .then((response) => response.json())
     .then((items) => {
       setTimeout(() => {
         //Redirect if Shop route is not valid
-        const existingRoutes = new Set(pages);
         if (existingRoutes.has(categoryId)) {
           setItems(items);
           console.log("Delayed item list fetching for 2 seconds.");
