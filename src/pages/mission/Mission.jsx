@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Mission = () => {
-  return <div>Mission - Work In Progress</div>;
+  return <p>Mission - Work In Progress</p>;
 };
