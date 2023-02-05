@@ -27,7 +27,6 @@ export const ItemListcontainer = () => {
 
 //Function that returns a filtered item array based on its corresponding page section
 const filteredItemList = (items, currentRoute) => {
-  console.dir(currentRoute);
   const filtereditems = items.filter(
     (item) =>
       `${item.itemName.toLowerCase()}-${item.itemSection}` ===
