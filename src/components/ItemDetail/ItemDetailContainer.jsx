@@ -14,13 +14,11 @@ const getItem = async (setItem, itemId, navigate) => {
   fetch("../json/books.json")
     .then((response) => response.json())
     .then((items) => {
-      setTimeout(() => {
-        const selectedItem = items.find(
-          (item) => item.itemId === Number.parseInt(itemId)
-        );
-        if (!selectedItem) navigate("/not-found");
-        setItem(selectedItem);
-        console.log("Delayed individual item detail fetching for 2 seconds.");
-      }, 2000);
+      const selectedItem = items.find(
+        (item) => item.itemId === Number.parseInt(itemId)
+      );
+      if (!selectedItem) navigate("/not-found");
+      console.log("Delayed individual item detail fetching for 2 seconds.");
+      setItem(selectedItem);
     });
 };
