@@ -30,7 +30,6 @@ const filteredItemList = (items, currentRoute) => {
   const filtereditems = items.filter(
     (item) => item.itemSection === currentRoute
   );
-
   return filtereditems.length ? filtereditems : items;
 };
 
