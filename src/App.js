@@ -1,7 +1,7 @@
-import "./App.scss"
+import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
-import { Shop, Cart, Mission, Contact, ItemPage } from "./pages";
+import { Shop, Cart, Mission, Contact, ItemPage, NotFound } from "./pages";
 
 import * as React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,12 +28,13 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/" to="/Home" element={<Shop />}></Route>
+            <Route path="/" to="/home" element={<Shop />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/mission" element={<Mission />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/item/:itemId" element={<ItemPage />}></Route>
             <Route path="category/:categoryId" element={<Shop />}></Route>
+            <Route path="/not-found" element={<NotFound />}></Route>
           </Routes>
         </Router>
       </>

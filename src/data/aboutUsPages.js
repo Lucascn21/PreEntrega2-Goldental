@@ -1,1 +1,1 @@
-export const aboutUsPages = ["Mission", "Contact"];
+export const aboutUsPages = ["mission", "contact"];
