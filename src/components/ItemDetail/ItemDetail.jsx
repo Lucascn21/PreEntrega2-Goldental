@@ -6,6 +6,7 @@ import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 export const ItemDetail = (props) => {
   const { itemName, price, stock, itemSection, itemImage, itemDescription } =
     props.itemData;
@@ -43,7 +44,16 @@ export const ItemDetail = (props) => {
       <ItemCount stock={stock || 0} />
       <Button
         onClick={() => {
-          console.log("onClick");
+          toast.success(" Product added to cart", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false, 
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
         }}
         sx={{ flex: "auto", width: "100%" }}
         size="large"
