@@ -32,6 +32,9 @@ export const ItemDetail = (props) => {
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {itemName || "Fetching..."}
+            <Typography variant="subtitle2" color="text.secondary">
+              {itemSection || "Fetching..."}
+            </Typography>
           </Typography>
           <Typography variant="overline" color="text.secondary">
             ${new Intl.NumberFormat("de-DE").format(price) || "Fetching..."}
@@ -47,7 +50,7 @@ export const ItemDetail = (props) => {
           toast.success(" Product added to cart", {
             position: "top-center",
             autoClose: 2000,
-            hideProgressBar: false, 
+            hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
