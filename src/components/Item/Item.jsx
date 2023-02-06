@@ -4,7 +4,7 @@ import { ItemDetailContainer } from "../ItemDetail/ItemDetailContainer";
 
 export const Item = ({ itemData }) => {
   return (
-    <Card component="article">
+    <Card>
       <ItemDetailContainer
         itemIdValue={`${itemData.itemName.toLowerCase()}-${
           itemData.itemSection

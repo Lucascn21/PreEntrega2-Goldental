@@ -23,21 +23,23 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
 
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" to="/home" element={<Shop />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/mission" element={<Mission />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/item/:itemId" element={<ItemPage />}></Route>
-          <Route path="category/:categoryId" element={<Shop />}></Route>
-          <Route path="/not-found" element={<NotFound />}></Route>
-        </Routes>
-      </Router>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" to="/home" element={<Shop />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/mission" element={<Mission />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/item/:itemId" element={<ItemPage />}></Route>
+            <Route path="category/:categoryId" element={<Shop />}></Route>
+            <Route path="/not-found" element={<NotFound />}></Route>
+          </Routes>
+        </Router>
+      </ThemeProvider>
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -50,6 +52,6 @@ export default function App() {
         pauseOnHover
         theme="colored"
       />
-    </ThemeProvider>
+    </>
   );
 }
