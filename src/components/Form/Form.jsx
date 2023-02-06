@@ -5,7 +5,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-
+import { toast } from "react-toastify";
 export const Form = () => {
   const {
     register,
@@ -36,7 +36,16 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        alert(JSON.stringify(data));
+        toast.success("Contact message sent.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       })}
       autoComplete="off"
     >
