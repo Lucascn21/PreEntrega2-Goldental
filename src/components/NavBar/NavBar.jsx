@@ -15,6 +15,7 @@ import { pages } from "../../data/pages";
 import { CartWidget } from "./CartWidget";
 import { aboutUsPages } from "../../data/aboutUsPages";
 import { AboutUsMenu } from "./AboutUsMenu";
+import { ColorModeWidget } from "./ColorModeWidget";
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -50,10 +51,16 @@ export const NavBar = () => {
             AnotherBookstore
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              color: "text.primary",
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="nav menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -140,6 +147,7 @@ export const NavBar = () => {
             ))}
             <AboutUsMenu></AboutUsMenu>
           </Box>
+          <ColorModeWidget></ColorModeWidget>
           <CartWidget cartValue={5} />
         </Toolbar>
       </Container>

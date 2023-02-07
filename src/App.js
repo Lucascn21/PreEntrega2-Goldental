@@ -5,28 +5,15 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Shop, Cart, Mission, Contact, ItemPage, NotFound } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeContextProvider } from "./context/ColorModeContext";
 
 export default function App() {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: prefersDarkMode ? "dark" : "light",
-        },
-      }),
-    [prefersDarkMode]
-  );
-
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <CssBaseline />
-
         <Router>
           <NavBar />
           <Routes>
@@ -39,7 +26,7 @@ export default function App() {
             <Route path="/not-found" element={<NotFound />}></Route>
           </Routes>
         </Router>
-      </ThemeProvider>
+      </ThemeContextProvider>
       <ToastContainer
         position="top-center"
         autoClose={5000}
