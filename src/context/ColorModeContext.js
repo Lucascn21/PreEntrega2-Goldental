@@ -27,14 +27,14 @@ export const ThemeContextProvider = (props) => {
             ? {
                 // palette values for light mode
                 primary: {
-                  main: '#1976d2',
+                  main: "#1976d2",
                 },
                 secondary: {
-                  main: 'rgb(220, 0, 78)',
+                  main: "rgb(220, 0, 78)",
                 },
                 background: {
-                  default: '#a8a8a8',
-                  paper: '#efefef',
+                  default: "#a8a8a8",
+                  paper: "#efefef",
                 },
               }
             : {
