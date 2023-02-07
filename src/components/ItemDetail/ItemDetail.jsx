@@ -5,8 +5,6 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
-import { Button } from "@mui/material";
-import { toast } from "react-toastify";
 
 export const ItemDetail = (props) => {
   //Props
@@ -18,9 +16,10 @@ export const ItemDetail = (props) => {
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
 
-  //Component helpers
-  const isStocked = (stock) => stock < 1;
-
+  const onAdd = (amount) => {
+    console.log(amount);
+    console.log(props.itemData);
+  };
   return (
     <>
       <CardActionArea
@@ -48,27 +47,7 @@ export const ItemDetail = (props) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={stock || 0} />
-      <Button
-        onClick={() => {
-          toast.success(" Product added to cart", {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-        }}
-        sx={{ flex: "auto", width: "100%" }}
-        size="large"
-        color="primary"
-        disabled={isStocked(stock)}
-      >
-        Add to cart
-      </Button>
+      <ItemCount stock={stock || 0} onAdd={onAdd} />
     </>
   );
 };

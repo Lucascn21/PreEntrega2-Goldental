@@ -2,19 +2,35 @@ import React, { useState } from "react";
 import { Button, CardActions } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+import { toast } from "react-toastify";
+
 const Div = styled("div")(({ theme }) => ({
   ...theme.typography.button,
   backgroundColor: theme.palette.background.paper,
   padding: theme.spacing(1),
 }));
 
-export const ItemCount = ({ stock }) => {
+export const ItemCount = ({ stock, onAdd }) => {
   const [stockCount, setStockCount] = useState(1);
   const add = () => stockCount < stock && setStockCount(stockCount + 1);
   const remove = () => stockCount > 1 && setStockCount(stockCount - 1);
   const isStocked = (stock) => stock < 1;
+  const addToCart = () => {
+    onAdd(stockCount);
+
+    toast.success(`🦄 added ${stockCount} product al to cart!`, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   return (
-    <CardActions sx={{ justifyContent: "center" }}>
+    <CardActions sx={{ flexWrap: "wrap", justifyContent: "center" }}>
       <Button
         onClick={() => {
           add();
@@ -35,6 +51,17 @@ export const ItemCount = ({ stock }) => {
         disabled={isStocked(stock)}
       >
         -
+      </Button>
+      <Button
+        onClick={() => {
+          addToCart(stockCount);
+        }}
+        sx={{ flex: "auto", width: "100%" }}
+        size="large"
+        color="primary"
+        disabled={isStocked(stock)}
+      >
+        Add to cart
       </Button>
     </CardActions>
   );
