@@ -4,10 +4,8 @@ import Box from "@mui/material/Box";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useColorModeContext } from "../../context/ColorModeContext";
-import { useTheme } from "@mui/material";
 export const ColorModeSwitch = () => {
   const ColorModeContext = useColorModeContext();
-  const { palette } = useTheme();
   return (
     <Box
       sx={{
@@ -18,11 +16,15 @@ export const ColorModeSwitch = () => {
       <IconButton
         sx={{ ml: 1 }}
         onClick={() => {
-          ColorModeContext.toggleColorMode();
+          ColorModeContext.colorMode.toggleColorMode();
         }}
         color="inherit"
       >
-        {palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+        {ColorModeContext.theme.palette.mode === "dark" ? (
+          <Brightness7Icon />
+        ) : (
+          <Brightness4Icon />
+        )}
       </IconButton>
     </Box>
   );
