@@ -1,6 +1,4 @@
-import React from "react";
-import { CartDetail } from "../../components/CartDetail/CartDetail";
-const cartItems = [
+export const cartItems = [
   {
     itemId: 1,
     itemName: "Test",
@@ -102,11 +100,3 @@ const cartItems = [
       "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica",
   },
 ];
-
-export const Cart = () => {
-  return (
-    <>
-      {cartItems ? <CartDetail filteredItems={cartItems}></CartDetail> : "noitems"}
-    </>
-  );
-};
