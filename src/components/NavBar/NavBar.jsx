@@ -17,7 +17,7 @@ import { aboutUsPages } from "../../data/aboutUsPages";
 import { AboutUsMenu } from "./AboutUsMenu";
 import { ColorModeWidget } from "./ColorModeWidget";
 
-export const NavBar = () => {
+export const NavBar = React.memo(() => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -153,4 +153,4 @@ export const NavBar = () => {
       </Container>
     </AppBar>
   );
-};
+});
