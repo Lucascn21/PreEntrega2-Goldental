@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -26,7 +26,15 @@ export const ItemDetail = (props) => {
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
 
-  const [stockInCart, setStockInCart] = useState(0);
+  const [stockInCart, setStockInCart] = useState(
+    cartContext.getQuantityInCart(itemId) || 0
+  );
+  //Hack to emulate the stock going down and up
+  useEffect(() => {
+    console.info("Setting stock in cart from context");
+    setStockInCart(cartContext.getQuantityInCart(itemId) || 0);
+  }, [cartContext, itemId]);
+
   const onAdd = (amount) => {
     cartContext.addToCart(itemId, amount);
     setStockInCart(cartContext.getQuantityInCart(itemId));
