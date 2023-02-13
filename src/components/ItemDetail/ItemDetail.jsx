@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
 
 export const ItemDetail = (props) => {
+  const cartContext = useCartContext();
+
   //Props
-  const { itemName, price, stock, itemSection, itemImage, itemDescription } =
-    props.itemData;
+  const {
+    itemId,
+    itemName,
+    price,
+    stock,
+    itemSection,
+    itemImage,
+    itemDescription,
+  } = props.itemData;
 
   //Img Placeholding
   const imgFoundPath =
     process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
 
+  const [stockInCart, setStockInCart] = useState(0);
   const onAdd = (amount) => {
-    console.log(amount);
-    console.log(props.itemData);
+    cartContext.addToCart(itemId, amount);
+    setStockInCart(cartContext.getQuantityInCart(itemId));
   };
+
   return (
     <>
       <CardActionArea
@@ -47,7 +59,7 @@ export const ItemDetail = (props) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={stock || 0} onAdd={onAdd} />
+      <ItemCount stock={stock - stockInCart} onAdd={onAdd} />
     </>
   );
 };

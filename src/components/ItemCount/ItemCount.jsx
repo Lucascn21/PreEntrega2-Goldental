@@ -15,9 +15,11 @@ export const ItemCount = ({ stock, onAdd }) => {
   const add = () => stockCount < stock && setStockCount(stockCount + 1);
   const remove = () => stockCount > 1 && setStockCount(stockCount - 1);
   const isStocked = (stock) => stock < 1;
+  const isStockEnough = (stock) => stock - stockCount < 0;
+  const isEqualAboveStock = (value, stock) => value >= stock;
+  const cantRemove = (stockCount) => stockCount === 1;
   const addToCart = () => {
     onAdd(stockCount);
-
     toast.success(`🦄 added ${stockCount} product al to cart!`, {
       position: "top-center",
       autoClose: 2000,
@@ -37,7 +39,7 @@ export const ItemCount = ({ stock, onAdd }) => {
         }}
         size="small"
         color="primary"
-        disabled={isStocked(stock)}
+        disabled={isStocked(stock) || isEqualAboveStock(stockCount, stock)}
       >
         +
       </Button>
@@ -48,7 +50,7 @@ export const ItemCount = ({ stock, onAdd }) => {
         }}
         size="small"
         color="primary"
-        disabled={isStocked(stock)}
+        disabled={isStocked(stock) || cantRemove(stockCount, stock)}
       >
         -
       </Button>
@@ -59,7 +61,7 @@ export const ItemCount = ({ stock, onAdd }) => {
         sx={{ flex: "auto", width: "100%" }}
         size="large"
         color="primary"
-        disabled={isStocked(stock)}
+        disabled={isStocked(stock) || isStockEnough(stock)}
       >
         Add to cart
       </Button>
