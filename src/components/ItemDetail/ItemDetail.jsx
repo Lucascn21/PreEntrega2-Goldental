@@ -27,17 +27,18 @@ export const ItemDetail = (props) => {
   const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
 
   const [stockInCart, setStockInCart] = useState(
-    cartContext.getQuantityInCart(itemId) || 0
+    cartContext.getQuantityInCart(props.itemData) || 0
   );
   //Hack to emulate the stock going down and up
   useEffect(() => {
-    console.info("Setting stock in cart from context");
-    setStockInCart(cartContext.getQuantityInCart(itemId) || 0);
-  }, [cartContext, itemId]);
+    console.info("Setting stock in cart from item details");
+    setStockInCart(cartContext.getQuantityInCart(props.itemData) || 0);
+  }, [cartContext, props.itemData]);
 
   const onAdd = (amount) => {
-    cartContext.addToCart(itemId, amount);
-    setStockInCart(cartContext.getQuantityInCart(itemId));
+    cartContext.addToWidget(amount);
+    cartContext.addToCart(props.itemData, amount);
+    setStockInCart(cartContext.getQuantityInCart(props.itemData));
   };
 
   return (

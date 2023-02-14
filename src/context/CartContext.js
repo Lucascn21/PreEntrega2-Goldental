@@ -5,20 +5,27 @@ export const useCartContext = () => React.useContext(CartContext); //Me permite 
 
 export const CartContextProvider = (props) => {
   const [cart, setCart] = React.useState(new Map());
+  const [WidgetAmount, setWidgetAmount] = React.useState(0);
 
-  const addToCart = (itemId, quantity) => {
+  const addToCart = (item, quantity) => {
     const newCart = cart;
-    const itemsInCart = cart.get(itemId) || 0;
-
-    newCart.set(itemId, quantity + itemsInCart);
+    const itemsInCart = cart.get(item) || 0;
+    newCart.set(item, quantity + itemsInCart);
     setCart(newCart);
   };
-  const getQuantityInCart = (itemId) => {
-    return cart.get(itemId);
+
+  const getQuantityInCart = (item) => {
+    return cart.get(item);
+  };
+
+  const addToWidget = (amount) => {
+    setWidgetAmount(amount + WidgetAmount);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getQuantityInCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, getQuantityInCart, addToWidget, WidgetAmount }}
+    >
       {props.children}
     </CartContext.Provider>
   );
