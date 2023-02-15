@@ -29,11 +29,6 @@ export const ItemDetail = (props) => {
   const [stockInCart, setStockInCart] = useState(
     cartContext.getQuantityInCart(props.itemData) || 0
   );
-  //Hack to emulate the stock going down and up
-  useEffect(() => {
-    console.info("Setting stock in cart from item details");
-    setStockInCart(cartContext.getQuantityInCart(props.itemData) || 0);
-  }, [cartContext, props.itemData]);
 
   const onAdd = (amount) => {
     cartContext.addToWidget(amount);

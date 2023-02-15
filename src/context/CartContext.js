@@ -6,7 +6,6 @@ export const useCartContext = () => React.useContext(CartContext); //Me permite 
 export const CartContextProvider = (props) => {
   const [cart, setCart] = React.useState(new Map());
   const [WidgetAmount, setWidgetAmount] = React.useState(0);
-
   const addToCart = (item, quantity) => {
     const newCart = cart;
     const itemsInCart = cart.get(item) || 0;
@@ -14,8 +13,24 @@ export const CartContextProvider = (props) => {
     setCart(newCart);
   };
 
+  const removeFromCart = (itemName) => {
+    let newCart = cart;
+    for (const item of newCart.entries()) {
+      if (item[0].itemName === itemName) newCart.delete(item[0]);
+    }
+    setCart(newCart);
+  };
+
+  const setQuantityInCart = (item, quantity) => {
+    const newCart = cart;
+    newCart.set(item, quantity);
+    setCart(newCart);
+  };
   const getQuantityInCart = (item) => {
-    return cart.get(item);
+    for (const itemInCart of cart) {
+      const itemObject = itemInCart[0];
+      return cart.get(itemObject);
+    }
   };
 
   const addToWidget = (amount) => {
@@ -24,15 +39,6 @@ export const CartContextProvider = (props) => {
 
   const removeFromWidget = (amount) => {
     setWidgetAmount(WidgetAmount - amount);
-  };
-
-  const removeFromCart = (itemName) => {
-    console.dir("removing " + itemName);
-    let newCart = cart;
-    for (const item of newCart.entries()) {
-      if (item[0].itemName === itemName) newCart.delete(item[0]);
-    }
-    setCart(newCart);
   };
 
   return (
@@ -45,6 +51,7 @@ export const CartContextProvider = (props) => {
         WidgetAmount,
         removeFromCart,
         removeFromWidget,
+        setQuantityInCart,
       }}
     >
       {props.children}
