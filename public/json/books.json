@@ -4,7 +4,7 @@
     "itemName": "Test",
     "price": 999,
     "stock": 5,
-    "itemImage": "D_Q_NP_2X_842806-MLA50134524072_052022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_842806-MLA50134524072_052022-P.webp?alt=media&token=87f3990e-0eaf-49d5-8808-bedeb31c9361",
     "itemSection": "ebooks",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -13,7 +13,7 @@
     "itemName": "Test2",
     "price": 999,
     "stock": 1,
-    "itemImage": "D_NQ_NP_802169-MLA53130241938_012023-O.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_NQ_NP_802169-MLA53130241938_012023-O.webp?alt=media&token=2505f112-8c50-4983-b5cd-d6fa9dda57ec",
     "itemSection": "physical-books",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -22,7 +22,7 @@
     "itemName": "Test3",
     "price": 999,
     "stock": 0,
-    "itemImage": "D_Q_NP_2X_942239-MLA52820572026_122022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_638013-MLA44368506429_122020-P.webp?alt=media&token=b080e989-2d98-4c0f-aaf5-635bc6f06013",
     "itemSection": "physical-books",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -31,7 +31,7 @@
     "itemName": "Test4",
     "price": 999,
     "stock": 7,
-    "itemImage": "D_Q_NP_2X_663435-MLA52934853210_122022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_663435-MLA52934853210_122022-P.webp?alt=media&token=36c0dc61-8513-4b43-b4c1-d09c9a6275c2",
     "itemSection": "magazines",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -40,7 +40,7 @@
     "itemName": "Test5",
     "price": 999,
     "stock": 1,
-    "itemImage": "D_Q_NP_2X_919213-MLA45815310225_052021-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_919213-MLA45815310225_052021-P.webp?alt=media&token=e93e2f16-8e60-4e59-bc45-cee915b1fea9",
     "itemSection": "ebooks",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -49,7 +49,7 @@
     "itemName": "Test6",
     "price": 999,
     "stock": 9,
-    "itemImage": "D_Q_NP_2X_946870-MLA51681845758_092022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_946870-MLA51681845758_092022-P.webp?alt=media&token=86914d57-3c73-45b9-8833-c840708b739f",
     "itemSection": "ebooks",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -58,7 +58,7 @@
     "itemName": "Test7",
     "price": 999,
     "stock": 17,
-    "itemImage": "D_Q_NP_2X_667312-MLA53010130481_122022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_667312-MLA53010130481_122022-P.webp?alt=media&token=52d3bcc0-dfdb-4227-9d05-6359a7cc48d4",
     "itemSection": "magazines",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -67,7 +67,7 @@
     "itemName": "Test8",
     "price": 999,
     "stock": 3,
-    "itemImage": "D_Q_NP_2X_638013-MLA44368506429_122020-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_748820-MLA51934976813_102022-P.webp?alt=media&token=bd8f0be3-dcfd-4ef4-a615-73038c7662f2",
     "itemSection": "physical-books",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -76,7 +76,7 @@
     "itemName": "Test9",
     "price": 999,
     "stock": 6,
-    "itemImage": "D_Q_NP_2X_748820-MLA51934976813_102022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_942239-MLA52820572026_122022-P.webp?alt=media&token=16f1986a-c41b-4404-8cd7-f8d760f43b27",
     "itemSection": "physical-books",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   },
@@ -85,7 +85,7 @@
     "itemName": "Test10",
     "price": 999,
     "stock": 3,
-    "itemImage": "D_Q_NP_2X_920959-MLA53097001575_122022-P.webp",
+    "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_920959-MLA53097001575_122022-P.webp?alt=media&token=39def87e-0b0b-4d63-a325-d83bd1ac039a",
     "itemSection": "magazines",
     "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
   }

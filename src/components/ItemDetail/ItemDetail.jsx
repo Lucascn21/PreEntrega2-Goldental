@@ -22,9 +22,9 @@ export const ItemDetail = (props) => {
   } = props.itemData;
 
   //Img Placeholding
-  const imgFoundPath =
-    process.env.PUBLIC_URL + `/img/${itemSection}/${itemImage}`;
-  const imgNotFoundPath = process.env.PUBLIC_URL + `/img/no_image.jpg`;
+  const imgFoundPath = itemImage;
+  const imgNotFoundPath =
+    "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/no_image.jpg?alt=media&token=8c460208-0bf1-49dd-8e2f-5732635a7abc";
 
   const [stockInCart, setStockInCart] = useState(
     cartContext.getQuantityInCart(props.itemData) || 0
@@ -50,7 +50,7 @@ export const ItemDetail = (props) => {
         <CardMedia
           component="img"
           height="140"
-          image={itemName ? imgFoundPath : imgNotFoundPath}
+          image={itemImage ? imgFoundPath : imgNotFoundPath}
           alt={itemName || "Placeholder"}
         />
         <CardContent>
