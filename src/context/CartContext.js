@@ -22,9 +22,30 @@ export const CartContextProvider = (props) => {
     setWidgetAmount(amount + WidgetAmount);
   };
 
+  const removeFromWidget = (amount) => {
+    setWidgetAmount(WidgetAmount - amount);
+  };
+
+  const removeFromCart = (itemName) => {
+    console.dir("removing " + itemName);
+    let newCart = cart;
+    for (const item of newCart.entries()) {
+      if (item[0].itemName === itemName) newCart.delete(item[0]);
+    }
+    setCart(newCart);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, getQuantityInCart, addToWidget, WidgetAmount }}
+      value={{
+        cart,
+        addToCart,
+        getQuantityInCart,
+        addToWidget,
+        WidgetAmount,
+        removeFromCart,
+        removeFromWidget,
+      }}
     >
       {props.children}
     </CartContext.Provider>

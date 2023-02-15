@@ -20,7 +20,7 @@ export const ItemCount = ({ stock, onAdd }) => {
   const cantRemove = (stockCount) => stockCount === 1;
   const addToCart = () => {
     onAdd(stockCount);
-    toast.success(`🦄 added ${stockCount} product al to cart!`, {
+    toast.success(`🦄 added ${stockCount} products to cart!`, {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: false,

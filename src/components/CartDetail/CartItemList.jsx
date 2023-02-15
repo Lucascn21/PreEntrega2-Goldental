@@ -7,12 +7,21 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import { useCartContext } from "../../context/CartContext";
+import { toast } from "react-toastify";
 export const CartItemList = (props) => {
-  function createData(itemName, itemImage, price, itemSection, quantity) {
-    return { itemName, itemImage, price, itemSection, quantity };
-  }
-
+  const cartContext = useCartContext();
   const rows = [];
+  function createData(
+    itemName,
+    itemImage,
+    price,
+    itemSection,
+    quantity,
+    itemId
+  ) {
+    return { itemName, itemImage, price, itemSection, quantity, itemId };
+  }
 
   for (const productData of props.children) {
     rows.push(
@@ -21,7 +30,8 @@ export const CartItemList = (props) => {
         productData.item.itemImage,
         productData.item.price,
         productData.item.itemSection,
-        productData.quantity
+        productData.quantity,
+        productData.item.itemId
       )
     );
   }
@@ -52,7 +62,27 @@ export const CartItemList = (props) => {
               <TableCell align="right">{row.itemSection}</TableCell>
               <TableCell align="right">{row.quantity}</TableCell>
               <TableCell align="right">
-                <Button variant="outlined" color="error">
+                <Button
+                  onClick={() => {
+                    cartContext.removeFromCart(row.itemName);
+                    cartContext.removeFromWidget(row.quantity);
+                    toast.info(
+                      `🦄 removed ${row.quantity} products from cart!`,
+                      {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                      }
+                    );
+                  }}
+                  variant="outlined"
+                  color="error"
+                >
                   Remove
                 </Button>
               </TableCell>
