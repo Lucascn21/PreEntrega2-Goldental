@@ -5,11 +5,7 @@ import { ItemDetailContainer } from "../ItemDetail/ItemDetailContainer";
 export const Item = ({ itemData }) => {
   return (
     <Card>
-      <ItemDetailContainer
-        itemIdValue={`${itemData.book.itemName.toLowerCase()}-${
-          itemData.book.itemSection
-        }`}
-      />
+      <ItemDetailContainer itemIdValue={itemData.id} />
     </Card>
   );
 };

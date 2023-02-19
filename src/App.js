@@ -6,7 +6,7 @@ import { Shop, Cart, Mission, Contact, ItemPage, NotFound } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartContextProvider } from "./context/CartContext";
-import { seedDB, getProducts } from "./firebase/firebase";
+import { seedDB, getProducts, getProduct } from "./firebase/firebase";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeContextProvider } from "./context/ColorModeContext";
 
