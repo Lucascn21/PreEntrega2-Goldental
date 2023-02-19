@@ -6,12 +6,12 @@ import { Shop, Cart, Mission, Contact, ItemPage, NotFound } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartContextProvider } from "./context/CartContext";
-import { seedDB } from "./firebase/firebase";
+import { seedDB, getProducts } from "./firebase/firebase";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeContextProvider } from "./context/ColorModeContext";
 
 export default function App() {
-  //seedDB(); Uncomment, run once, then comment when DB needs to be seeded.
+  //seedDB(); // Uncomment, run once, then comment when DB needs to be seeded.
   return (
     <>
       <ThemeContextProvider>

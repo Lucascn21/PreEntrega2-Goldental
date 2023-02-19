@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  doc,
+  addDoc,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,6 +26,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(); //Querying DB
 
 //Product CRUD
+export const getProducts = async () => {
+  const books = await getDocs(collection(db, "books"));
+  const booksArray = books.docs.map((book) => {
+    return { ...book.data(), id: book.id };
+  });
+  return booksArray;
+};
 
 /**
  * Seeds the firestorage

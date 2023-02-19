@@ -5,6 +5,7 @@ import { Loading } from "../Loading/Loading";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { pages } from "../../data/pages";
+import { getProducts } from "../../firebase/firebase";
 /*
 Container component that Receives a Shop or Cart Component as a children to render
 This component will be used as a Container Component in Shop and Cart.
@@ -15,44 +16,30 @@ export const ItemListcontainer = () => {
   const [loading, setLoading] = useState(true);
 
   let navigate = useNavigate();
+
   useEffect(() => {
-    getItems(setItems, categoryId, navigate, setLoading);
-    setLoading(true);
+    const existingRoutes = new Set(pages);
+    const categoryIsEverything = categoryId === pages[0];
+    if (existingRoutes.has(categoryId)) {
+      getProducts().then((items) => {
+        const products = items.filter(
+          (item) =>
+            `${item.book.itemName.toLowerCase()}-${item.book.itemSection}` ===
+              `${item.book.itemName.toLowerCase()}-${categoryId}` ||
+            categoryIsEverything
+        );
+        const productsList = products;
+        setItems(productsList);
+        setLoading(false);
+      });
+    } else {
+      getProducts().then((items) => {
+        setItems(items);
+        setLoading(false);
+        navigate("/");
+      });
+    }
   }, [categoryId, navigate]);
 
-  const filteredBooks = filteredItemList(items, categoryId);
-
-  return loading ? <Loading /> : <ItemList filteredItems={filteredBooks} />;
-};
-
-//Function that returns a filtered item array based on its corresponding page section
-const filteredItemList = (items, currentRoute) => {
-  const filtereditems = items.filter(
-    (item) =>
-      `${item.itemName.toLowerCase()}-${item.itemSection}` ===
-      `${item.itemName.toLowerCase()}-${currentRoute}`
-  );
-
-  return filtereditems.length ? filtereditems : items;
-};
-
-const getItems = (setItems, categoryId, navigate, setLoading) => {
-  const existingRoutes = new Set(pages);
-
-  fetch("../json/books.json")
-    .then((response) => response.json())
-    .then((items) => {
-      setTimeout(() => {
-        //Redirect if Shop route is not valid
-        if (existingRoutes.has(categoryId)) {
-          setItems(items);
-          console.log("Delayed item list fetching for 2 seconds.");
-          setLoading(false);
-        } else {
-          setItems(items);
-          setLoading(false);
-          navigate("/");
-        }
-      }, 2000);
-    });
+  return loading ? <Loading /> : <ItemList filteredItems={items} />;
 };

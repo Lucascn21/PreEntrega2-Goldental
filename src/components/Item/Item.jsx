@@ -6,8 +6,8 @@ export const Item = ({ itemData }) => {
   return (
     <Card>
       <ItemDetailContainer
-        itemIdValue={`${itemData.itemName.toLowerCase()}-${
-          itemData.itemSection
+        itemIdValue={`${itemData.book.itemName.toLowerCase()}-${
+          itemData.book.itemSection
         }`}
       />
     </Card>

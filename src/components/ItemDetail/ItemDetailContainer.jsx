@@ -1,24 +1,20 @@
 import { useState, useEffect } from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useNavigate } from "react-router-dom";
+import { getProducts } from "../../firebase/firebase";
 export const ItemDetailContainer = ({ itemIdValue }) => {
   let navigate = useNavigate();
   const [item, setItem] = useState([]);
   useEffect(() => {
-    getItem(setItem, itemIdValue, navigate);
-  }, [itemIdValue, navigate]);
-  return <ItemDetail itemData={item}></ItemDetail>;
-};
-
-const getItem = async (setItem, itemId, navigate) => {
-  fetch("../json/books.json")
-    .then((response) => response.json())
-    .then((items) => {
+    getProducts().then((items) => {
       const selectedItem = items.find(
         (item) =>
-          `${item.itemName.toLowerCase()}-${item.itemSection}` === itemId
+          `${item.book.itemName.toLowerCase()}-${item.book.itemSection}` ===
+          itemIdValue
       );
       if (!selectedItem) navigate("/not-found");
-      setItem(selectedItem);
+      setItem(selectedItem.book);
     });
+  }, [itemIdValue, navigate]);
+  return <ItemDetail itemData={item}></ItemDetail>;
 };
