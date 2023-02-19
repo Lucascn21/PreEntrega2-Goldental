@@ -34,6 +34,12 @@ export const getProducts = async () => {
   return booksArray;
 };
 
+export const getProduct = async (id) => {
+  const book = await getDoc(doc(db, "books", id));
+  const bookObject = { ...book.data(), id: book.id };
+  return bookObject;
+};
+
 /**
  * Seeds the firestorage
  */
