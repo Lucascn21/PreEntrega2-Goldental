@@ -27,7 +27,7 @@ export const ItemPage = () => {
       >
         <Grid xs={12}>
           <ItemMUI>
-            <ItemDetailContainer itemIdValue={itemId} />
+            <ItemDetailContainer itemIdRouteValue={itemId} />
           </ItemMUI>
         </Grid>
       </Grid>

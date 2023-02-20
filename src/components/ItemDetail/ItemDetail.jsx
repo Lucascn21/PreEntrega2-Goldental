@@ -9,17 +9,10 @@ import { useCartContext } from "../../context/CartContext";
 
 export const ItemDetail = (props) => {
   const cartContext = useCartContext();
-
+  // console.dir(props);
   //Props
-  const {
-    itemId,
-    itemName,
-    price,
-    stock,
-    itemSection,
-    itemImage,
-    itemDescription,
-  } = props.itemData;
+  const { itemName, price, stock, itemSection, itemImage, itemDescription } =
+    props.itemData;
 
   //Img Placeholding
   const imgFoundPath = itemImage;
