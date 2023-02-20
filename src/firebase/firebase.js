@@ -7,7 +7,10 @@ import {
   addDoc,
   getDoc,
   getDocs,
+  query,
+  where,
 } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,10 +37,26 @@ export const getProducts = async () => {
   return booksArray;
 };
 
-export const getProduct = async (id) => {
+export const getProductById = async (id) => {
   const book = await getDoc(doc(db, "books", id));
   const bookObject = { ...book.data(), id: book.id };
   return bookObject;
+};
+
+export const getProductByName = async (name) => {
+  const citiesRef = collection(db, "books");
+  const parsedName = name.split("-")[0];
+  const capitalizedName =
+    parsedName.charAt(0).toUpperCase() + parsedName.slice(1);
+  // Create a query against the collection.
+  const q = query(citiesRef, where("itemName", "==", capitalizedName));
+  const querySnapshot = await getDocs(q);
+  let result;
+  querySnapshot.forEach((doc) => {
+    console.dir(doc.data());
+    result = doc.data();
+  });
+  return result;
 };
 
 /**
@@ -47,6 +66,6 @@ export const seedDB = async () => {
   const booksFetch = await fetch("../json/books.json");
   const books = await booksFetch.json();
   books.forEach(async (book) => {
-    await addDoc(collection(db, "books"), { book });
+    await addDoc(collection(db, "books"), { ...book });
   });
 };
