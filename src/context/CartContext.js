@@ -31,11 +31,15 @@ export const CartContextProvider = (props) => {
   };
 
   const addToWidget = (amount) => {
-    setWidgetAmount(amount + WidgetAmount);
+    setWidgetAmount(WidgetAmount + amount);
   };
 
   const removeFromWidget = (amount) => {
     setWidgetAmount(WidgetAmount - amount);
+  };
+
+  const emptyCart = () => {
+    setCart([]);
   };
 
   return (
@@ -49,6 +53,7 @@ export const CartContextProvider = (props) => {
         removeFromCart,
         removeFromWidget,
         setQuantityInCart,
+        emptyCart,
       }}
     >
       {props.children}
