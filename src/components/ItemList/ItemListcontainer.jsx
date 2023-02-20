@@ -24,8 +24,8 @@ export const ItemListcontainer = () => {
       getProducts().then((items) => {
         const products = items.filter(
           (item) =>
-            `${item.book.itemName.toLowerCase()}-${item.book.itemSection}` ===
-              `${item.book.itemName.toLowerCase()}-${categoryId}` ||
+            `${item.itemName.toLowerCase()}-${item.itemSection}` ===
+              `${item.itemName.toLowerCase()}-${categoryId}` ||
             categoryIsEverything
         );
         const productsList = products;
