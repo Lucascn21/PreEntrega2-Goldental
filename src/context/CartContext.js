@@ -27,10 +27,7 @@ export const CartContextProvider = (props) => {
     setCart(newCart);
   };
   const getQuantityInCart = (item) => {
-    for (const itemInCart of cart) {
-      const itemObject = itemInCart[0];
-      return cart.get(itemObject);
-    }
+    return cart.get(item);
   };
 
   const addToWidget = (amount) => {
