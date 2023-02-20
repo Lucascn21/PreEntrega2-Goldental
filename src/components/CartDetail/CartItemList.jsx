@@ -43,7 +43,8 @@ export const CartItemList = (props) => {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell align="right">Image</TableCell>
-            <TableCell align="right">Price&nbsp;($)</TableCell>
+            <TableCell align="right">Unit Price&nbsp;($)</TableCell>
+            <TableCell align="right">Total Price&nbsp;($)</TableCell>
             <TableCell align="right">Type</TableCell>
             <TableCell align="right">Quantity</TableCell>
           </TableRow>
@@ -58,7 +59,8 @@ export const CartItemList = (props) => {
                 {row.itemName}
               </TableCell>
               <TableCell align="right">{row.itemImage}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
+              <TableCell align="right">&nbsp;${new Intl.NumberFormat("de-DE").format(row.price)}</TableCell>
+              <TableCell align="right">&nbsp;${new Intl.NumberFormat("de-DE").format(row.price*row.quantity)}</TableCell>
               <TableCell align="right">{row.itemSection}</TableCell>
               <TableCell align="right">{row.quantity}</TableCell>
               <TableCell align="right">
