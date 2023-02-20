@@ -22,7 +22,7 @@ export const ItemList = ({ filteredItems }) => {
       {filteredItems.map((item) => (
         <Grid key={item.id} component="section" xs={12} md={3}>
           <ItemMUI>
-            <Item itemData={item} />
+            <Item itemID={item.id} />
           </ItemMUI>
         </Grid>
       ))}
