@@ -8,8 +8,8 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { useCartContext } from "../../context/CartContext";
 
 export const ItemDetail = (props) => {
+  //Could/Should deestructure but this is more semantic
   const cartContext = useCartContext();
-  // console.dir(props);
   //Props
   const { itemName, price, stock, itemSection, itemImage, itemDescription } =
     props.itemData;

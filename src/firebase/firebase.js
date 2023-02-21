@@ -11,9 +11,6 @@ import {
   where,
 } from "firebase/firestore";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -48,7 +45,6 @@ export const getProductByName = async (name) => {
   const parsedName = name.split("-")[0];
   const capitalizedName =
     parsedName.charAt(0).toUpperCase() + parsedName.slice(1);
-  // Create a query against the collection.
   const q = query(citiesRef, where("itemName", "==", capitalizedName));
   const querySnapshot = await getDocs(q);
   let result;
