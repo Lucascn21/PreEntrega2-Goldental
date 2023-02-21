@@ -12,8 +12,8 @@ export const CartDetail = ({ cartItemsMap }) => {
   }
   return (
     <main>
-      {!cartItemsMap.size ? (
-        <Container maxWidth="sm">
+      <Container maxWidth="xl">
+        {!cartItemsMap.size ? (
           <Box sx={{ marginTop: "2rem", height: "100vh" }}>
             <Typography variant="h3" gutterBottom>
               Your cart is empty!
@@ -33,10 +33,10 @@ export const CartDetail = ({ cartItemsMap }) => {
               </Link>
             </Typography>
           </Box>
-        </Container>
-      ) : (
-        <CartItemList>{elements.map((product) => product)}</CartItemList>
-      )}
+        ) : (
+          <CartItemList>{elements.map((product) => product)}</CartItemList>
+        )}
+      </Container>
     </main>
   );
 };
