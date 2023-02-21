@@ -43,6 +43,14 @@ export const CartContextProvider = (props) => {
     setWidgetAmount(WidgetAmount - amount);
   };
 
+  const getTotalPrice = () => {
+    let total = 0;
+    for (const itemInCart of cart) {
+      total += itemInCart[0].price * itemInCart[1];
+    }
+    return total;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -55,6 +63,7 @@ export const CartContextProvider = (props) => {
         removeFromWidget,
         setQuantityInCart,
         emptyCart,
+        getTotalPrice,
       }}
     >
       {props.children}
