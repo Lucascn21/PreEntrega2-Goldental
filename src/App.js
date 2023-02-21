@@ -11,7 +11,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeContextProvider } from "./context/ColorModeContext";
 
 export default function App() {
-  // seedDB(); // Uncomment, run once, then comment when DB needs to be seeded.
+  //seedDB(); // Uncomment, run once, then comment when DB needs to be seeded.
   return (
     <>
       <ThemeContextProvider>
@@ -27,6 +27,8 @@ export default function App() {
               <Route path="/item/:itemId" element={<ItemPage />}></Route>
               <Route path="category/:categoryId" element={<Shop />}></Route>
               <Route path="/not-found" element={<NotFound />}></Route>
+              <Route path="*" to="/not-found" element={<NotFound />}></Route>
+              
             </Routes>
           </Router>
         </CartContextProvider>
