@@ -9,6 +9,8 @@ import {
   getDocs,
   query,
   where,
+  updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -53,6 +55,42 @@ export const getProductByName = async (name) => {
     result = doc.data();
   });
   return result;
+};
+export const updateProductById = async (id, updatedData) => {
+  await updateDoc(doc(db, "books", id), updatedData);
+};
+
+export const deleteProductById = async (id) => {
+  await deleteDoc(doc(db, "books", id));
+};
+
+//Orders
+export const createBuyOrder = async ({
+  clientData,
+  cart,
+  totalprice,
+  currentDate,
+}) => {
+  let cartItemsIdArray = [];
+  for (const itemInCart of cart) {
+    cartItemsIdArray.push({
+      id: itemInCart.id,
+      quantity: itemInCart.quantityInCart,
+    });
+  }
+  const buyOrder = await addDoc(collection(db, "buyOrders"), {
+    clientData,
+    cartItemsIdArray,
+    totalprice,
+    currentDate,
+  });
+  return buyOrder;
+};
+
+export const getBuyOrderById = async (id) => {
+  const buyOrder = await getDoc(doc(db, "buyOrders", id));
+  const buyOrderObject = { ...buyOrder.data(), id: buyOrder.id };
+  return buyOrderObject;
 };
 
 /**
