@@ -16,16 +16,9 @@ import { CartWidget } from "./CartWidget";
 import { aboutUsPages } from "../../data/aboutUsPages";
 import { AboutUsMenu } from "./AboutUsMenu";
 import { ColorModeWidget } from "./ColorModeWidget";
-import { useCartContext } from "../../context/CartContext";
 
 export const NavBar = () => {
-  const cartContext = useCartContext();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [cartValue, setCartValue] = React.useState(cartContext.WidgetAmount);
-
-  React.useEffect(() => {
-    setCartValue(cartContext.WidgetAmount);
-  }, [cartContext]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -154,8 +147,8 @@ export const NavBar = () => {
             ))}
             <AboutUsMenu></AboutUsMenu>
           </Box>
-          <ColorModeWidget></ColorModeWidget>
-          <CartWidget cartValue={cartValue} />
+          <ColorModeWidget />
+          <CartWidget />
         </Toolbar>
       </Container>
     </AppBar>
