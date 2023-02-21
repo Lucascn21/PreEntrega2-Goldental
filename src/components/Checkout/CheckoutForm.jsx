@@ -6,8 +6,16 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useCartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import {
+  createBuyOrder,
+  getBuyOrderById,
+  getProductById,
+  updateProductById,
+} from "../../firebase/firebase";
 export const CheckoutForm = () => {
-  const { getTotalPrice, cartAsArray } = useCartContext();
+  let navigate = useNavigate();
+  const { getTotalPrice, cartAsArray, emptyCart } = useCartContext();
   const {
     register,
     handleSubmit,
@@ -42,20 +50,39 @@ export const CheckoutForm = () => {
     <form
       onSubmit={handleSubmit((clientData) => {
         let cart = cartAsArray();
+        for (const itemInCart of cart) {
+          getProductById(itemInCart.id).then((itemInDB) => {
+            itemInDB.stock -= itemInCart.quantityInCart;
+            updateProductById(itemInCart.id, itemInDB);
+          });
+        }
         let totalprice = getTotalPrice();
         let currentDate = new Date().toLocaleDateString();
         console.dir({ clientData, cart, totalprice, currentDate });
-
-        toast.success("Order sent.", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+        createBuyOrder({ clientData, cart, totalprice, currentDate }).then(
+          (buyOrder) => {
+            getBuyOrderById(buyOrder.id);
+            emptyCart();
+            toast.success(
+              `Hello ${name}, Your order ( ID:${
+                buyOrder.id
+              }) for $${new Intl.NumberFormat("de-DE").format(
+                totalprice
+              )} has been placed on ${currentDate}`,
+              {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              }
+            );
+            navigate("/");
+          }
+        );
       })}
       autoComplete="off"
     >
