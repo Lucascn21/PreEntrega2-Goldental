@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { useCartContext } from "../../context/CartContext";
 export const CheckoutForm = () => {
-  const { getTotalPrice, cart } = useCartContext();
+  const { getTotalPrice, cartAsArray } = useCartContext();
   const {
     register,
     handleSubmit,
@@ -26,7 +26,6 @@ export const CheckoutForm = () => {
       reset(() => ({
         name: null,
         email: null,
-        message: null,
         emailRepeat: null,
         cellphone: null,
         direction: null,
@@ -41,7 +40,12 @@ export const CheckoutForm = () => {
     direction = watch("direction") || "";
   return (
     <form
-      onSubmit={handleSubmit((data) => {
+      onSubmit={handleSubmit((clientData) => {
+        let cart = cartAsArray();
+        let totalprice = getTotalPrice();
+        let currentDate = new Date().toLocaleDateString();
+        console.dir({ clientData, cart, totalprice, currentDate });
+
         toast.success("Order sent.", {
           position: "top-center",
           autoClose: 5000,
@@ -52,9 +56,6 @@ export const CheckoutForm = () => {
           progress: undefined,
           theme: "colored",
         });
-        console.dir(cart);
-        console.dir(data);
-        console.dir(getTotalPrice());
       })}
       autoComplete="off"
     >
@@ -181,7 +182,6 @@ export const CheckoutForm = () => {
               reset(() => ({
                 name: null,
                 email: null,
-                message: null,
                 emailRepeat: null,
                 cellphone: null,
                 direction: null,
