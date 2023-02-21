@@ -51,6 +51,14 @@ export const CartContextProvider = (props) => {
     return total;
   };
 
+  const cartAsArray = () => {
+    let cartArray = [];
+    for (const [item, quantity] of cart) {
+      cartArray.push({ ...item, quantitiyInCart: quantity });
+    }
+    return cartArray;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -64,6 +72,7 @@ export const CartContextProvider = (props) => {
         setQuantityInCart,
         emptyCart,
         getTotalPrice,
+        cartAsArray
       }}
     >
       {props.children}
