@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
-export function CartDetail({ cartItemsMap }) {
+export const CartDetail = ({ cartItemsMap }) => {
   let elements = [];
   for (const [item, quantity] of [...cartItemsMap]) {
     elements.push({ quantity, item });
@@ -39,4 +39,4 @@ export function CartDetail({ cartItemsMap }) {
       )}
     </main>
   );
-}
+};
