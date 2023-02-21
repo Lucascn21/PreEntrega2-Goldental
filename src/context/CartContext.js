@@ -32,7 +32,8 @@ export const CartContextProvider = (props) => {
   };
 
   const emptyCart = () => {
-    setCart([]);
+    setWidgetAmount(0);
+    setCart(new Map());
   };
 
   const addToWidget = (amount) => {
@@ -54,7 +55,7 @@ export const CartContextProvider = (props) => {
   const cartAsArray = () => {
     let cartArray = [];
     for (const [item, quantity] of cart) {
-      cartArray.push({ ...item, quantitiyInCart: quantity });
+      cartArray.push({ ...item, quantityInCart: quantity });
     }
     return cartArray;
   };
@@ -72,7 +73,7 @@ export const CartContextProvider = (props) => {
         setQuantityInCart,
         emptyCart,
         getTotalPrice,
-        cartAsArray
+        cartAsArray,
       }}
     >
       {props.children}
