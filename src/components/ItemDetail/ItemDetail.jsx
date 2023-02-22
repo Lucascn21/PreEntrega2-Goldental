@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -11,22 +11,26 @@ export const ItemDetail = (props) => {
   //Could/Should deestructure but this is more semantic
   const cartContext = useCartContext();
   //Props
-  const { itemName, price, stock, itemSection, itemImage, itemDescription } =
-    props.itemData;
-
+  const {
+    itemName,
+    price,
+    stock,
+    itemSection,
+    itemImage,
+    itemDescription,
+    quantityInCart,
+  } = props.itemData;
+  //console.dir(props);
   //Img Placeholding
   const imgFoundPath = itemImage;
   const imgNotFoundPath =
     "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/no_image.jpg?alt=media&token=8c460208-0bf1-49dd-8e2f-5732635a7abc";
 
-  const [stockInCart, setStockInCart] = useState(
-    cartContext.getQuantityInCart(props.itemData) || 0
-  );
+  //console.dir(cartContext.getQuantityInCart(props.itemData));
 
   const onAdd = (amount) => {
     cartContext.addToWidget(amount);
     cartContext.addToCart(props.itemData, amount);
-    setStockInCart(cartContext.getQuantityInCart(props.itemData));
   };
 
   return (
@@ -56,7 +60,7 @@ export const ItemDetail = (props) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ItemCount stock={stock - stockInCart} onAdd={onAdd} />
+      <ItemCount stock={stock - quantityInCart} onAdd={onAdd} />
     </>
   );
 };

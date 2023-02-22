@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import { Checkout } from "../Checkout/Checkout";
-export const CartItemList = (props) => {
+export const CartItemList = () => {
   const cartContext = useCartContext();
   const rows = [];
   function createData(
@@ -24,15 +24,15 @@ export const CartItemList = (props) => {
     return { itemName, itemImage, price, itemSection, quantity, itemId };
   }
 
-  for (const productData of props.children) {
+  for (const productData of cartContext.cart) {
     rows.push(
       createData(
-        productData.item.itemName,
-        productData.item.itemImage,
-        productData.item.price,
-        productData.item.itemSection,
-        productData.quantity,
-        productData.item.itemId
+        productData.itemName,
+        productData.itemImage,
+        productData.price,
+        productData.itemSection,
+        productData.quantityInCart,
+        productData.itemId
       )
     );
   }
