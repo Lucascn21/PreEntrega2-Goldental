@@ -5,15 +5,11 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
-export const CartDetail = ({ cartItemsMap }) => {
-  let elements = [];
-  for (const [item, quantity] of [...cartItemsMap]) {
-    elements.push({ quantity, item });
-  }
+export const CartDetail = ({ cartItemsTotal }) => {
   return (
     <main>
       <Container maxWidth="xl">
-        {!cartItemsMap.size ? (
+        {cartItemsTotal === 0 ? (
           <Box sx={{ marginTop: "2rem", height: "100vh" }}>
             <Typography variant="h3" gutterBottom>
               Your cart is empty!
@@ -34,7 +30,7 @@ export const CartDetail = ({ cartItemsMap }) => {
             </Typography>
           </Box>
         ) : (
-          <CartItemList>{elements.map((product) => product)}</CartItemList>
+          <CartItemList />
         )}
       </Container>
     </main>

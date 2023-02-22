@@ -4,21 +4,29 @@ const CartContext = React.createContext(); //Crear mi contexto
 export const useCartContext = () => React.useContext(CartContext); //Me permite utilizar mi context
 
 export const CartContextProvider = (props) => {
-  const [cart, setCart] = React.useState(new Map());
+  const [cart, setCart] = React.useState([]);
   const [WidgetAmount, setWidgetAmount] = React.useState(0);
 
   const addToCart = (item, quantity) => {
-    const newCart = cart;
-    const itemsInCart = cart.get(item) || 0;
-    newCart.set(item, quantity + itemsInCart);
-    setCart(newCart);
+    if (itemExistsInCart(item.id)) {
+      const index = cart.findIndex((itemInCart) => itemInCart.id === item.id);
+      const newCart = [...cart];
+      newCart[index].quantityInCart += quantity;
+      setCart(newCart);
+    } else {
+      const prodCart = {
+        ...item,
+        quantityInCart: quantity,
+      };
+      setCart([...cart, prodCart]);
+    }
+  };
+  const itemExistsInCart = (itemId) => {
+    return cart.find((itemInCart) => itemInCart.id === itemId);
   };
 
   const removeFromCart = (itemName) => {
-    let newCart = cart;
-    for (const item of newCart.entries()) {
-      if (item[0].itemName === itemName) newCart.delete(item[0]);
-    }
+    const newCart = cart.filter((item) => item.itemName !== itemName);
     setCart(newCart);
   };
 
@@ -27,13 +35,13 @@ export const CartContextProvider = (props) => {
     newCart.set(item, quantity);
     setCart(newCart);
   };
-  const getQuantityInCart = (item) => {
-    return cart.get(item);
+  const getQuantityInCart = (itemId) => {
+    return itemExistsInCart(itemId);
   };
 
   const emptyCart = () => {
     setWidgetAmount(0);
-    setCart(new Map());
+    setCart([]);
   };
 
   const addToWidget = (amount) => {
@@ -47,17 +55,13 @@ export const CartContextProvider = (props) => {
   const getTotalPrice = () => {
     let total = 0;
     for (const itemInCart of cart) {
-      total += itemInCart[0].price * itemInCart[1];
+      total += itemInCart.price * itemInCart.quantityInCart;
     }
     return total;
   };
 
   const cartAsArray = () => {
-    let cartArray = [];
-    for (const [item, quantity] of cart) {
-      cartArray.push({ ...item, quantityInCart: quantity });
-    }
-    return cartArray;
+    return cart;
   };
 
   return (
