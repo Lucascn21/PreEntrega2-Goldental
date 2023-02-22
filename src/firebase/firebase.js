@@ -51,8 +51,7 @@ export const getProductByName = async (name) => {
   const querySnapshot = await getDocs(q);
   let result;
   querySnapshot.forEach((doc) => {
-    console.dir(doc.data());
-    result = doc.data();
+    result = { ...doc.data(), id: doc.id };
   });
   return result;
 };
