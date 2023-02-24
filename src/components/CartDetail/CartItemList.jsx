@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import { Checkout } from "../Checkout/Checkout";
+import Link from "@mui/material/Link";
 export const CartItemList = () => {
   const cartContext = useCartContext();
   const rows = [];
@@ -52,6 +53,7 @@ export const CartItemList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
+         
             {rows.map((row) => (
               <TableRow
                 key={row.itemName}
@@ -121,6 +123,9 @@ export const CartItemList = () => {
         </Table>
       </TableContainer>
       <Checkout></Checkout>
+      <Link href="/" underline="hover" color="primary">
+        {"Back to shopping"}
+      </Link>
     </>
   );
 };
