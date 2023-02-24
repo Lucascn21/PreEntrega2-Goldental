@@ -1,92 +1,92 @@
 [
   {
     "itemId": 1,
-    "itemName": "Test",
-    "price": 999,
+    "itemName": "Hombre Atractivo",
+    "price": 5000,
     "stock": 5,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_842806-MLA50134524072_052022-P.webp?alt=media&token=87f3990e-0eaf-49d5-8808-bedeb31c9361",
     "itemSection": "ebooks",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Mark Wolynn, fundador y director del Instituto de Constelaciones Familiares (FCI) y pionero en el estudio de los traumas familiares heredados, presenta en Este dolor no es mío un enfoque transformador que permite resolver problemas crónicos que no han podido ser aliviados mediante la terapia tradicional, los medicamentos u otras medidas."
   },
   {
     "itemId": 2,
-    "itemName": "Test2",
-    "price": 999,
+    "itemName": "El Poder De Las Palabras",
+    "price": 4586,
     "stock": 1,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_NQ_NP_802169-MLA53130241938_012023-O.webp?alt=media&token=2505f112-8c50-4983-b5cd-d6fa9dda57ec",
     "itemSection": "physical-books",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Después del éxito mundial de La vida secreta de la mente, Mariano Sigman reúne los avances más recientes de la neurociencia y los combina con historias de vida y una dosis importante de humor para explicar cómo y por qué las buenas conversaciones mejoran nuestras decisiones, ideas, memoria y emociones"
   },
   {
     "itemId": 3,
-    "itemName": "Test3",
-    "price": 999,
+    "itemName": "Demon Slayer",
+    "price": 1250,
     "stock": 0,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_638013-MLA44368506429_122020-P.webp?alt=media&token=b080e989-2d98-4c0f-aaf5-635bc6f06013",
     "itemSection": "physical-books",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Todos los tomos, en un mismo lugar Manga - Demon Slayer - Ivrea Koyoharu Shone"
   },
   {
     "itemId": 4,
-    "itemName": "Test4",
-    "price": 999,
+    "itemName": "Revista Seúl | Anuario 2022",
+    "price": 900,
     "stock": 7,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_663435-MLA52934853210_122022-P.webp?alt=media&token=36c0dc61-8513-4b43-b4c1-d09c9a6275c2",
     "itemSection": "magazines",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Seúl se hace de papel. Un anuario de este 2022 a nuestro estilo, con las mejores ilustraciones y las mejores historias de este año al borde del abismo. ¡36 páginas a todo color!"
   },
   {
     "itemId": 5,
-    "itemName": "Test5",
-    "price": 999,
+    "itemName": "Cuadernillo De Estimulación Cognitiva",
+    "price": 1500,
     "stock": 1,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_919213-MLA45815310225_052021-P.webp?alt=media&token=e93e2f16-8e60-4e59-bc45-cee915b1fea9",
     "itemSection": "ebooks",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Contiene más de 100 ejercicios de complejidad ascendente, el mismo se encuentra dividido en tres niveles (básico, intermedio y avanzado). Formato digital - PDF listo para imprimir."
   },
   {
     "itemId": 6,
-    "itemName": "Test6",
-    "price": 999,
+    "itemName": "Cuadernillo De Cursivas",
+    "price": 300,
     "stock": 9,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/ebooks%2FD_Q_NP_2X_946870-MLA51681845758_092022-P.webp?alt=media&token=86914d57-3c73-45b9-8833-c840708b739f",
     "itemSection": "ebooks",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Cuadernillo para aprender las letras cursivas imprimible, un muy completo con todas la letras del abecedario por separado, palabras, actividades y ejercicios de grafomotricidad."
   },
   {
     "itemId": 7,
-    "itemName": "Test7",
-    "price": 999,
+    "itemName": "Gritalo! Campeones Mundiales",
+    "price": 3500,
     "stock": 17,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_667312-MLA53010130481_122022-P.webp?alt=media&token=52d3bcc0-dfdb-4227-9d05-6359a7cc48d4",
     "itemSection": "magazines",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Revista Olé: Campeones Mundiales de 128 páginas con toda la información sobre la Selección."
   },
   {
     "itemId": 8,
-    "itemName": "Test8",
-    "price": 999,
+    "itemName": "Libro El Poder De Las Palabras",
+    "price": 3000,
     "stock": 3,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_748820-MLA51934976813_102022-P.webp?alt=media&token=bd8f0be3-dcfd-4ef4-a615-73038c7662f2",
     "itemSection": "physical-books",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Después del éxito mundial de La vida secreta de la mente, Mariano Sigman reúne los avances más recientes de la neurociencia y los combina con historias de vida y una dosis importante de humor para explicar cómo y por qué las buenas conversaciones mejoran nuestras decisiones, ideas, memoria y emociones."
   },
   {
     "itemId": 9,
-    "itemName": "Test9",
-    "price": 999,
+    "itemName": "Libro Dibu Martínez, Pasión Por El Fútbol",
+    "price": 2959,
     "stock": 6,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/physical-books%2FD_Q_NP_2X_942239-MLA52820572026_122022-P.webp?alt=media&token=16f1986a-c41b-4404-8cd7-f8d760f43b27",
     "itemSection": "physical-books",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "En este libro conocerás cómo descubrió su pasión por el fútbol y cómo desarrolló su carrera en este deporte que vuelve locos a todos los argentinos. Con un poco de ficción y mucho de realidad seguirás sus días desde que jugaba a pelota en la playa hasta su compra más importante como arquero."
   },
   {
     "itemId": 10,
-    "itemName": "Test10",
-    "price": 999,
+    "itemName": "Revista Info Auto Nro 322 Enero 2023",
+    "price": 2490,
     "stock": 3,
     "itemImage": "https://firebasestorage.googleapis.com/v0/b/react-coder-lgm.appspot.com/o/magazines%2FD_Q_NP_2X_920959-MLA53097001575_122022-P.webp?alt=media&token=39def87e-0b0b-4d63-a325-d83bd1ac039a",
     "itemSection": "magazines",
-    "itemDescription": "Lizards are a widespread group of squamate reptiles, with over 6,000  species, ranging across all continents except Antarctica"
+    "itemDescription": "Presentamos el Mercedes-Benz Clase S 500 4 Matic Mild Hybrid. La limousine más lujosa, tecnologizada y segura. También uno de sus modelos de la marca, con mayor permanencia en el mercado con casi 70 años. "
   }
 ]
