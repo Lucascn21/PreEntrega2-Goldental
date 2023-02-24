@@ -141,10 +141,6 @@ export const CheckoutForm = () => {
             variant="filled"
             {...register("emailRepeat", {
               required: "Repeat your email",
-              pattern: {
-                value: emailRegExp,
-                message: "This doesnt seem to be a valid email",
-              },
               validate: {
                 emailEqual: (value) => value === email || "Email doesnt match",
               },
