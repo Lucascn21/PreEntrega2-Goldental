@@ -44,9 +44,10 @@ export const getProductById = async (id) => {
 
 export const getProductByName = async (name) => {
   const citiesRef = collection(db, "books");
-  const parsedName = name.split("-")[0];
-  const capitalizedName =
-    parsedName.charAt(0).toUpperCase() + parsedName.slice(1);
+  const parsedName = name.split("-")[0]; //name comes in a name-route format
+  const capitalizedName = parsedName.replace(/(^\w|\s\w)/g, (m) =>
+    m.toUpperCase()
+  );
   const q = query(citiesRef, where("itemName", "==", capitalizedName));
   const querySnapshot = await getDocs(q);
   let result;
