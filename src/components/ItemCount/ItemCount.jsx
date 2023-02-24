@@ -35,17 +35,6 @@ export const ItemCount = ({ stock, onAdd }) => {
     <CardActions sx={{ flexWrap: "wrap", justifyContent: "center" }}>
       <Button
         onClick={() => {
-          add();
-        }}
-        size="small"
-        color="primary"
-        disabled={isStocked(stock) || isEqualAboveStock(stockCount, stock)}
-      >
-        +
-      </Button>
-      <Div>{isStocked(stock) ? "no stock" : `${stockCount} / ${stock}`}</Div>
-      <Button
-        onClick={() => {
           remove();
         }}
         size="small"
@@ -53,6 +42,18 @@ export const ItemCount = ({ stock, onAdd }) => {
         disabled={isStocked(stock) || cantRemove(stockCount, stock)}
       >
         -
+      </Button>
+
+      <Div>{isStocked(stock) ? "no stock" : `${stockCount} / ${stock}`}</Div>
+      <Button
+        onClick={() => {
+          add();
+        }}
+        size="small"
+        color="primary"
+        disabled={isStocked(stock) || isEqualAboveStock(stockCount, stock)}
+      >
+        +
       </Button>
       <Button
         onClick={() => {
