@@ -102,3 +102,12 @@ export const seedDB = async () => {
     await addDoc(collection(db, "books"), { ...book });
   });
 };
+
+export const restockItems = async () => {
+  const booksFetch = await fetch("../json/books.json");
+  const books = await booksFetch.json();
+  books.forEach(async (book) => {
+    let { id } = await getProductByName(book.itemName, book);
+    updateProductById(id, book);
+  });
+};
