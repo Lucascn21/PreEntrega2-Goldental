@@ -28,12 +28,10 @@ export default function App() {
               <Route path="category/:categoryId" element={<Shop />}></Route>
               <Route path="/not-found" element={<NotFound />}></Route>
               <Route path="*" to="/not-found" element={<NotFound />}></Route>
-              
             </Routes>
           </Router>
         </CartContextProvider>
       </ThemeContextProvider>
-
       <ToastContainer
         position="top-center"
         autoClose={5000}
