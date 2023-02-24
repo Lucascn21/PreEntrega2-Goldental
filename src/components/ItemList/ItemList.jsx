@@ -20,8 +20,14 @@ export const ItemList = ({ filteredItems }) => {
   return (
     <>
       {filteredItems.map((item) => (
-        <Grid key={item.id} component="section" xs={12} md={3}>
-          <ItemMUI>
+        <Grid
+          sx={{ display: "flex" }}
+          key={item.id}
+          component="section"
+          xs={12}
+          md={3}
+        >
+          <ItemMUI sx={{ display: "flex", width: "100%" }}>
             <Item itemID={item.id} />
           </ItemMUI>
         </Grid>

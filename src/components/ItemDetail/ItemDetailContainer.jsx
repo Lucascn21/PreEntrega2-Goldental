@@ -7,7 +7,7 @@ export const ItemDetailContainer = (props) => {
   const cartContext = useCartContext();
   let navigate = useNavigate();
   const [item, setItem] = useState({});
-
+  
   const isRouteValid = (item, route) => {
     return route === `${item.itemName}-${item.itemSection}`.toLowerCase();
   };
