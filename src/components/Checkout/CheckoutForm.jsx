@@ -12,6 +12,7 @@ import {
   getBuyOrderById,
   getProductById,
   updateProductById,
+  restockItems,
 } from "../../firebase/firebase";
 export const CheckoutForm = () => {
   let navigate = useNavigate();
@@ -31,13 +32,26 @@ export const CheckoutForm = () => {
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset(() => ({
-        name: null,
-        email: null,
-        emailRepeat: null,
-        cellphone: null,
-        direction: null,
-      }));
+      setTimeout(function () {
+        reset(() => ({
+          name: null,
+          email: null,
+          emailRepeat: null,
+          cellphone: null,
+          direction: null,
+        }));
+        restockItems();
+        toast.info(`Items have been restocked, refresh the site`, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }, 60000);
     }
   }, [isSubmitSuccessful, reset]);
 
@@ -58,7 +72,6 @@ export const CheckoutForm = () => {
         }
         let totalprice = getTotalPrice();
         let currentDate = new Date().toLocaleDateString();
-        console.dir({ clientData, cart, totalprice, currentDate });
         createBuyOrder({ clientData, cart, totalprice, currentDate }).then(
           (buyOrder) => {
             getBuyOrderById(buyOrder.id);
@@ -80,6 +93,16 @@ export const CheckoutForm = () => {
                 theme: "colored",
               }
             );
+            toast.info(`Items will be restocked in 1 minute`, {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
             navigate("/");
           }
         );
