@@ -40,6 +40,7 @@ export const ItemDetail = (props) => {
         to={`/item/${itemName}-${itemSection}`.toLowerCase()}
       >
         <CardMedia
+          sx={{ objectFit: "cover" }}
           component="img"
           height="140"
           image={itemImage ? imgFoundPath : imgNotFoundPath}
