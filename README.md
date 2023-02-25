@@ -1,32 +1,32 @@
 ![](anotherbs.gif)
-# Objetivos.
-Navegabilidad básica de la aplicación, demostrando que la app permite ver el catálogo, y navegar a un detalle.
-# Consigna.
-Configura en App.js el routing usando un BrowserRouter de tu aplicación con react-router-dom
+# E-commerce React LGM
+  An book e-commerce on React.
+  1 minute after the checkout, the app will restock itself.
 
-**Componentes:**
 
-**`Navbar con cart`**
+_Final Project Coderhouse React_
 
-**`Catálogo`**
+### Requirements📋
 
-**`Detalle de producto`**
+_You must install the requirements specified in package.json_
 
-# Se debe entregar.
-Rutas a configurar
-
-**‘/’ navega a `<ItemListContainer />`**
-
-**‘/category/:id’  `<ItemListContainer />`**
-
-**‘/item/:id’ navega a `<ItemDetailContainer />`**
-
-# Links a configurar
-**Clickear en el brand debe navegar a `‘/’`**
-
-**Clickear un Item.js debe navegar  `/item/:id`**
-
-**Clickear en una categoría del navbar debe navegar a `/category/:categoryId `**
-
-### Para finalizar deberá integrar los parámetros de tus async-mocks para reaccionar a :itemId y :categoryId ¡utilizando efectos y los hooks de parámetros que vimos en clase! Si te encuentras en una categoría deberías poder detectar la navegación a otra categoría y volver a cargar los productos que correspondan a dicha categoría.
-
+```
+npm i 
+```
+## Execution ⌨️
+_Type the following on your console:_
+```
+ npm start
+```
+_On your browser go to:_
+```
+localhost:3000
+```
+## Tech 🛠️
+* [React](https://reactjs.org/) - JavaScript Library
+* [Firebase](https://firebase.google.com/?hl=es-419) - DB
+* [Sass](https://sass-lang.com/documentation/) - CSS with Superpowers
+* [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms with validation.
+* [React Router Dom](https://reactrouter.com/en/main/start/overview/) - Routing
+* [MUI](https://reactrouter.com/en/main/start/overview/) - Component Library
+* [Toastify](https://fkhadra.github.io/react-toastify/introduction/) - Notifications
