@@ -1,11 +1,10 @@
 ![](anotherbsFinal.gif)
 # E-commerce React LGM
+
   An book e-commerce on React.
   
   1 minute after the checkout, the app will restock itself.
 
-
-_Final Project Coderhouse React_
 
 ### Requirements📋
 
